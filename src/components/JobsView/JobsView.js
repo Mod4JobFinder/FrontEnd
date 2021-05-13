@@ -1,4 +1,5 @@
 import React from 'react';
+import './JobsView.css';
 
 function JobsView() {
   return (
