@@ -33,5 +33,5 @@ context('Job_finder', () => {
     .get('[data-cy=jobViewLayout]').should('exist');
   })
 
-  it()
+
 })
