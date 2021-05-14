@@ -1,4 +1,4 @@
-const salare = 'https://findjob-backend.herokuapp.com/api/v1/salaries?city=denver'
+const salary = 'https://findjob-backend.herokuapp.com/api/v1/salaries?city=denver'
 const usersUrl = 'https://findjob-backend.herokuapp.com/api/v1/users'
 const loginUrl = 'https://findjob-backend.herokuapp.com/api/v1/sessions'
 
