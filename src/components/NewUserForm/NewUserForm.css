@@ -1,1 +1,23 @@
+.mainLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+}
 
+/* Utility classes */
+.light {
+  background: #3B27BA;
+  opacity: .75;
+  color: white;
+}
+
+.dark {
+  background: #B9FFFD;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}

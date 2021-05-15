@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './Landing.css';
 import Header from '../Header/Header.js';
-import LoginForm from '../LoginNewForm/LoginNewForm.js';
+import LoginForm from '../LoginForm/LoginForm.js';
 import {ThemeContext} from '../../Context/ThemeContext';
 
 
