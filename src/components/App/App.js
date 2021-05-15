@@ -5,6 +5,7 @@ import JobsView from '../JobsView/JobsView.js';
 import UserView from '../UserView/UserView.js';
 
 function App() {
+
   return (
     <Switch className='app'>
       <Route exact path='/' component={ Landing }/>
