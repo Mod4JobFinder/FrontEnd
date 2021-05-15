@@ -34,18 +34,30 @@ function NewUserForm() {
   }
 
   const handleSubmitNew = (e) => {
-    console.log('test')
     const  test = {
-      "email": "whatever@example.com",
-      "password": "password",
-      "password_confirmation": "password",
-      "first_name": "Khoa",
-      "last_name": "Nguyen",
-      "city": "The Moon",
-      "state": "MN",
-      "zipcode": '80000'
+      "email": email,
+      "password": password,
+      "password_confirmation": passwordConfirmation,
+      "first_name": firstName,
+      "last_name": lastName,
+      "city": city,
+      "state": state,
+      "zipcode": zipcode
     }
     postNewUser(test)
+    .then(data => console.log(data))
+    clearForm()
+  }
+
+  const clearForm = () => {
+      setFirstName('')
+      setLastName('')
+      setCity('')
+      setState('')
+      setZipcode('')
+      setEmail('')
+      setPassword('')
+      setPasswordConfirmation('')
   }
 
   return(
@@ -126,7 +138,7 @@ function NewUserForm() {
       </article>
       <article className='submitBox'>
         <Link to={'/'}>Back To Login</Link>
-        <button}>Submit New User</button>
+        <button onClick={() => handleSubmitNew()}>Submit New User</button>
       </article>
     </section>
   )
