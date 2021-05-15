@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {ThemeContext} from '../ThemeContext';
+import {ThemeContext} from '../../Context/ThemeContext';
 
 function Header() {
   const { color, handleModeChange } = useContext(ThemeContext)

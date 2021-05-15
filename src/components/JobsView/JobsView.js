@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './JobsView.css';
-import {ThemeContext} from '../ThemeContext';
+import {ThemeContext} from '../../Context/ThemeContext';
 
 function JobsView() {
   const { color } = useContext(ThemeContext)

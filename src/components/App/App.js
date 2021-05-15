@@ -3,13 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 import Landing from '../Landing/Landing.js';
 import JobsView from '../JobsView/JobsView.js';
 import UserView from '../UserView/UserView.js';
-import {ThemeContextProvider} from '../ThemeContext';
+import {ThemeContextProvider} from '../../Context/ThemeContext';
 
 function App() {
-  // const [color, setColor] = useState('dark');
 
   return (
-
     <ThemeContextProvider>
       <Switch className='app'>
         <Route exact path='/' component={ Landing }/>
