@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
 import { Link } from 'react-router-dom';
+import { postNewUser } from '../../apiCalls.js';
+
 function NewUserForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -29,6 +31,21 @@ function NewUserForm() {
     } else if (formType === 'passwordConfirmation') {
       setPasswordConfirmation(event.target.value)
     }
+  }
+
+  const handleSubmitNew = (e) => {
+    console.log('test')
+    const  test = {
+      "email": "whatever@example.com",
+      "password": "password",
+      "password_confirmation": "password",
+      "first_name": "Khoa",
+      "last_name": "Nguyen",
+      "city": "The Moon",
+      "state": "MN",
+      "zipcode": '80000'
+    }
+    postNewUser(test)
   }
 
   return(
@@ -109,10 +126,11 @@ function NewUserForm() {
       </article>
       <article className='submitBox'>
         <Link to={'/'}>Back To Login</Link>
-        <button>Submit New User</button>
+        <button}>Submit New User</button>
       </article>
     </section>
   )
 }
 
 export default NewUserForm
+// onClick={() => handleSubmitNew()}
