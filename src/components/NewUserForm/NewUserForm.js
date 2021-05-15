@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import {ThemeContext} from '../../Context/ThemeContext';
-
+import { ThemeContext } from '../../Context/ThemeContext';
+import { Link } from 'react-router-dom';
 function NewUserForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -13,27 +13,27 @@ function NewUserForm() {
 
   const handleChange = (event, formType) => {
     if (formType === 'firstName') {
-      setEmailInput(event.target.value)
+      setFirstName(event.target.value)
     } else if (formType === 'lastName') {
-      setPassInput(event.target.value)
+      setLastName(event.target.value)
     } else if (formType === 'city') {
-      setFirstName(event.target.value)
+      setCity(event.target.value)
     } else if (formType === 'state') {
-      setFirstName(event.target.value)
+      setState(event.target.value)
     } else if (formType === 'zipcode') {
-      setFirstName(event.target.value)
+      setZipcode(event.target.value)
     } else if (formType === 'email') {
-      setFirstName(event.target.value)
+      setEmail(event.target.value)
     } else if (formType === 'password') {
-      setFirstName(event.target.value)
+      setPassword(event.target.value)
     } else if (formType === 'passwordConfirmation') {
-      setFirstName(event.target.value)
+      setPasswordConfirmation(event.target.value)
     }
   }
 
   return(
     <section>
-      <article className={`newUser ${newUser}`}>
+      <article className='newUser'>
         <input
           className='firstName'
           name='firstName'
@@ -108,7 +108,7 @@ function NewUserForm() {
         />
       </article>
       <article className='submitBox'>
-        <button>Back To Login</button>
+        <Link to={'/'}>Back To Login</Link>
         <button>Submit New User</button>
       </article>
     </section>
