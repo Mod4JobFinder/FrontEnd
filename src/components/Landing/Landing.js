@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Landing.css';
+import Header from '../Header/Header.js';
 
 function Landing() {
   return (
-    <p>Test</p>
+    <main className='LandingLayout'>
+      <Header />
+      <p>test</p>
+    </main>
   );
 }
 

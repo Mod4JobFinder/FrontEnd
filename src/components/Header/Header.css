@@ -1,0 +1,46 @@
+.headerLayout {
+  display: flex;
+  height: 10vh;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.LeftButtonBox {
+  width: 33vw;
+  display: flex;
+}
+
+.rightHeaderButtons {
+  width: 33vw;
+  display: flex;
+}
+
+.titleBox {
+  width: 33vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.appTitle {
+  font-size: 3em;
+}
+
+/* Utility classes */
+.light {
+  background-color: #3B27BA;
+  opacity: .75;
+  color: white;
+}
+
+.dark {
+  background-color: #B9FFFD;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
