@@ -1,5 +1,19 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
-export default ThemeContext
+export const ThemeContextProvider = (props) => {
+  const [color, setColor] = useState('dark');
+  const handleModeChange = (e) => {
+    if (color === 'light') {
+      setColor('dark');
+    } else {
+      setColor('light');
+    }
+  }
+  return(
+    <ThemeContext.Provider value={{color, handleModeChange}}>
+      {props.children}
+    </ThemeContext.Provider>
+  )
+}

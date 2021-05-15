@@ -3,20 +3,20 @@ import { Route, Switch } from 'react-router-dom';
 import Landing from '../Landing/Landing.js';
 import JobsView from '../JobsView/JobsView.js';
 import UserView from '../UserView/UserView.js';
-import ThemeContext from '../ThemeContext';
+import {ThemeContextProvider} from '../ThemeContext';
 
 function App() {
-  const [color, setColor] = useState('dark');
-  
+  // const [color, setColor] = useState('dark');
+
   return (
 
-    <ThemeContext.Provider value={{color, setColor}}>
+    <ThemeContextProvider>
       <Switch className='app'>
         <Route exact path='/' component={ Landing }/>
         <Route exact path='/JobsView' component={ JobsView }/>
         <Route exact path='/UserView' component={ UserView }/>
       </Switch>
-    </ThemeContext.Provider>
+    </ThemeContextProvider>
   );
 }
 

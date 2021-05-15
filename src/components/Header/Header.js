@@ -1,18 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import ThemeContext from '../ThemeContext';
+import {ThemeContext} from '../ThemeContext';
 
 function Header() {
-  const { color, setColor } = useContext(ThemeContext)
-  // console.log(value);
-
-  // const [mode, setMode] = useState('light');
-  const handleModeChange = (e) => {
-    if (color === 'light') {
-      setColor('dark');
-    } else {
-      setColor('light');
-    }
-  }
+  const { color, handleModeChange } = useContext(ThemeContext)
 
   return (
     <section className='headerLayout' data-cy='headerLayout'>
