@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
-import {ThemeContext} from '../../Context/ThemeContext';
+import { ThemeContext } from '../../Context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
   const { color, handleModeChange } = useContext(ThemeContext);
@@ -45,7 +46,7 @@ function LoginForm() {
       </article>
       <article className='submitBox'>
         <button onClick={(e) => handleLogIn(e)}>Login</button>
-        <button className={`${existingUser}`}onClick={(e) => handleNewUser(e)}>New User</button>
+        <Link to={'/NewUser'}>New User</Link>
       </article>
     </section>
   )
