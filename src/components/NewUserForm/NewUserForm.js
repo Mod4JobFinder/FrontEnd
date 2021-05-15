@@ -145,4 +145,3 @@ function NewUserForm() {
 }
 
 export default NewUserForm
-// onClick={() => handleSubmitNew()}

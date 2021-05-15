@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
 import { Link } from 'react-router-dom';
+import './LoginForm.css';
 
 function LoginForm() {
   const { color, handleModeChange } = useContext(ThemeContext);
