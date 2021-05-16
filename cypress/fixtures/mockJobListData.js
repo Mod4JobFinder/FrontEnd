@@ -1,8 +1,8 @@
 {
-  "data": [{
-    "id": 1,
-    "type": "Part Time",
-    "attributes": { "title": "Software1", "company": "Google", "category": ["ALL", 'The', 'Tags'], "description": "Are to a dev?", "location": "Anywhere", "publish_date": "datetime", "link": "https://github.com/orgs/Mod4JobFinder/projects/1" }
+  data: [{
+    id: 1,
+    type: "Part Time",
+    attributes: { "title": "Software1", "company": "Google", "category": ["ALL", 'The', 'Tags'], "description": "Are to a dev?", "location": "Anywhere", "publish_date": "datetime", "link": "https://github.com/orgs/Mod4JobFinder/projects/1" }
   }, {
     "id": 2,
     "type": "Part Time",

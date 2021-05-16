@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { postNewUser } from '../../apiCalls.js';
 
 function NewUserForm() {
-  const { firstName, lastName, email, city, state, zipcode, password, passwordConfirmation, handleUserChange, clearUserForm} = useContext(ThemeContext)
+  const {firstName, lastName, email, city, state, zipcode, password, passwordConfirmation, handleUserChange, clearUserForm} = useContext(UserContext);
+
   // const [firstName, setFirstName] = useState('');
   // const [lastName, setLastName] = useState('');
   // const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ function NewUserForm() {
   // const [zipcode, setZipcode] = useState('');
   // const [password, setPassword] = useState('');
   // const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  //
+
   // const handleChange = (event, formType) => {
   //   if (formType === 'firstName') {
   //     setFirstName(event.target.value)
