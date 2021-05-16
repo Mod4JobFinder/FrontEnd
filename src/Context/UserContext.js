@@ -54,6 +54,7 @@ export const UserContextProvider = (props) => {
       zipcode,
       password,
       passwordConfirmation,
+      userSavedJobs,
       handleUserChange,
       clearUserForm}
      }>
