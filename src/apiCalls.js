@@ -26,4 +26,5 @@ export const postSession = (sessionInfo) => {
 
 export const getSalary = (city) => {
   return fetch(`${salaryUrl}${city}`)
+  .then(response => response.json())
 }

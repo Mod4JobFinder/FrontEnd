@@ -1,7 +1,7 @@
 context('Job_finder', () => {
 
   it('When vistiting the page you should start on a login page with a header and login feild', () => {
-    cy.visit('http://localhost:3000')
+    cy.stubbedInercepts()
     .get('[data-cy=headerLayout]').should('exist')
     .get('[data-cy=mode]').click()
     .get('[data-cy=appTitle]').contains('Job Finder!')
@@ -9,7 +9,7 @@ context('Job_finder', () => {
   });
 
   it('The landing view should be able to sign up a new user', () => {
-    cy.visit('http://localhost:3000')
+    cy.stubbedInercepts()
     .get('[data-cy=loginFormLayout]').should('exist')
     .get('[data-cy=newUserButton]').click()
     .get('[data-cy=firstName]').type('Amie').should('have.value', 'Amie')
@@ -24,7 +24,7 @@ context('Job_finder', () => {
   })
 
   it('The landing view should be able to login an existing user', () => {
-    cy.visit('http://localhost:3000')
+    cy.stubbedInercepts()
     .get('[data-cy=loginFormLayout]').should('exist')
     .get('[data-cy=userName]').type('Amie').should('have.value', 'Amie')
     .get('[data-cy=email]').type('AmieDog@gmail.com').should('have.value', 'AmieDog@gmail.com')
