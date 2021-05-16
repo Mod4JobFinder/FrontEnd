@@ -1,20 +1,23 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
+import { UserContext } from '../../Context/UserContext';
 import { Link } from 'react-router-dom';
 import './LoginForm.css';
 
 function LoginForm() {
   const { color, handleModeChange } = useContext(ThemeContext);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { email, password, handleUserChange } = useContext(UserContext);
 
-  const handleChange = (event, formType) => {
-    if (formType === 'email') {
-      setEmail(event.target.value)
-    } else if (formType === 'password') {
-      setPassword(event.target.value)
-    }
-  }
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  //
+  // const handleChange = (event, formType) => {
+  //   if (formType === 'email') {
+  //     setEmail(event.target.value)
+  //   } else if (formType === 'password') {
+  //     setPassword(event.target.value)
+  //   }
+  // }
 
   return (
     <section className='mainLayout'>
@@ -23,7 +26,7 @@ function LoginForm() {
           className='login-input'
           name='email'
           value={email}
-          onChange={event => handleChange(event, 'email')}
+          onChange={event => handleUserChange(event, 'email')}
           type='text'
           aria-label='User email address'
           placeholder='User Email'
@@ -32,7 +35,7 @@ function LoginForm() {
           className='login-input'
           name='password'
           value={password}
-          onChange={event => handleChange(event, 'password')}
+          onChange={event => handleUserChange(event, 'password')}
           type='password'
           aria-label='user password input'
           placeholder='User Password'
