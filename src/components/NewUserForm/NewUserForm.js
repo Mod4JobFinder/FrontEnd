@@ -64,9 +64,10 @@ function NewUserForm() {
   // }
 
   return(
-    <section className='mainLayout'>
+    <section className='newUserFormLayout' data-cy='newUserFormLayout'>
         <article className='newUser'>
           <input
+            data-cy='firstName'
             className='firstName'
             name='firstName'
             value={firstName}
@@ -76,6 +77,7 @@ function NewUserForm() {
             placeholder='First Name'
           />
           <input
+            data-cy='lastName'
             className='lastName'
             name='lastName'
             value={lastName}
@@ -85,6 +87,7 @@ function NewUserForm() {
             placeholder='Last Name'
           />
           <input
+            data-cy='city'
             className='city'
             name='city'
             value={city}
@@ -94,6 +97,7 @@ function NewUserForm() {
             placeholder='City'
           />
           <input
+            data-cy='state'
             className='state'
             name='state'
             value={state}
@@ -103,6 +107,7 @@ function NewUserForm() {
             placeholder='State'
           />
           <input
+            data-cy='zipcode'
             className='zipcode'
             name='zipcode'
             value={zipcode}
@@ -112,6 +117,7 @@ function NewUserForm() {
             placeholder='Zipcode'
           />
           <input
+            data-cy='email'
             className='email'
             name='email'
             value={email}
@@ -121,6 +127,7 @@ function NewUserForm() {
             placeholder='Email'
           />
           <input
+            data-cy='password'
             className='password'
             name='password'
             value={password}
@@ -130,6 +137,7 @@ function NewUserForm() {
             placeholder='Password'
           />
           <input
+            data-cy='passwordConfirmation'
             className='passwordConfirmation'
             name='passwordConfirmation'
             value={passwordConfirmation}
@@ -141,7 +149,7 @@ function NewUserForm() {
         </article>
         <article className='submitBox'>
           <Link to={'/'}>Back To Login</Link>
-          <button onClick={() => handleSubmitNew()}>Submit New User</button>
+          <Link to={'/JobsView'} onClick={() => handleSubmitNew()} className='newUserSub' data-cy='newUserSub'>Submit New User</Link>
         </article>
     </section>
   )

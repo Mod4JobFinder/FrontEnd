@@ -21,30 +21,34 @@ function LoginForm() {
 
   return (
     <section className='mainLayout'>
-      <article className='login' data-cy='login'>
-        <input
-          className='login-input'
-          name='email'
-          value={email}
-          onChange={event => handleUserChange(event, 'email')}
-          type='text'
-          aria-label='User email address'
-          placeholder='User Email'
-        />
-        <input
-          className='login-input'
-          name='password'
-          value={password}
-          onChange={event => handleUserChange(event, 'password')}
-          type='password'
-          aria-label='user password input'
-          placeholder='User Password'
-        />
-      </article>
-      <article className='submitBox'>
-        <button>Login</button>
-        <Link to={'/NewUser'}>New User</Link>
-      </article>
+      <div className='loginFormLayout'>
+        <article className='loginForm' data-cy='loginForm'>
+          <input
+            data-cy='email'
+            className='login-input'
+            name='email'
+            value={email}
+            onChange={event => handleUserChange(event, 'email')}
+            type='text'
+            aria-label='User email address'
+            placeholder='User Email'
+          />
+          <input
+            data-cy='password'
+            className='login-input'
+            name='password'
+            value={password}
+            onChange={event => handleUserChange(event, 'password')}
+            type='password'
+            aria-label='user password input'
+            placeholder='User Password'
+          />
+        </article>
+        <article className='submitBox'>
+          <Link to={'/JobsView'} className='loginButton' data-cy='loginButton'>Login</Link>
+          <Link to={'/NewUser'} className='newUserButton' data-cy='newUserButton'>New User</Link>
+        </article>
+      </div>
     </section>
   )
 }

@@ -5,7 +5,9 @@ import {ThemeContext} from '../../Context/ThemeContext';
 function JobsView() {
   const { color } = useContext(ThemeContext)
   return (
-    <p>Test 2</p>
+    <section className='jobViewLayout' data-cy='jobViewLayout'>
+      <p>Test 2</p>
+    </section>
   );
 }
 

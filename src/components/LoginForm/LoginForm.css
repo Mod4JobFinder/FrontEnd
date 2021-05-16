@@ -6,6 +6,16 @@
   width: 100vw;
 }
 
+.loginFormLayout {
+
+}
+
+.loginForm {
+  height: 35vh;
+  width: 50vw;
+}
+
+
 /* Utility classes */
 .light {
   background: #3B27BA;
