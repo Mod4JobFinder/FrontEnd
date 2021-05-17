@@ -4,9 +4,9 @@ import { UserContext } from '../../Context/UserContext';
 import { Link } from 'react-router-dom';
 import { postNewUser } from '../../apiCalls.js';
 
+
 function NewUserForm() {
   const {firstName, lastName, email, city, state, zipcode, password, passwordConfirmation, handleUserChange, clearUserForm} = useContext(UserContext);
-
   // const [firstName, setFirstName] = useState('');
   // const [lastName, setLastName] = useState('');
   // const [email, setEmail] = useState('');

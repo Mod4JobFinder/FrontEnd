@@ -10,7 +10,7 @@ function LoginForm() {
 
   // const [email, setEmail] = useState('');
   // const [password, setPassword] = useState('');
-  //
+
   // const handleChange = (event, formType) => {
   //   if (formType === 'email') {
   //     setEmail(event.target.value)
@@ -18,6 +18,10 @@ function LoginForm() {
   //     setPassword(event.target.value)
   //   }
   // }
+
+  const ConditionalLink = ({ children, to, condition }) => (!!condition && to)
+      ? <Link to={to}>{children}</Link>
+      : <>{children}</>;
 
   return (
     <section className='mainLayout'>
