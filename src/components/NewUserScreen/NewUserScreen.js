@@ -5,7 +5,7 @@ import './NewUserScreen.css';
 import Header from '../Header/Header.js';
 
 function NewUserScreen() {
-  const { color, handleModeChange } = useContext(ThemeContext);
+  const {color} = useContext(ThemeContext);
   return (
     <main>
       <Header />
