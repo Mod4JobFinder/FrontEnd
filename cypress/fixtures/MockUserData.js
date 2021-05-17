@@ -1,8 +1,8 @@
 {
-  'data': {
-    'id': null,
-    'type': 'UserOne'
-    'attributes': {
+  data: {
+    id: null,
+    type: 'UserOne',
+    attributes: {
       'first_name': 'First Name',
       'last_name': 'Last Name',
       'email': 'Test@Test.com',

@@ -31,13 +31,13 @@
 
 /* Utility classes */
 .light {
-  background-color: #3B27BA;
+  background: #3B27BA;
   opacity: .75;
   color: white;
 }
 
 .dark {
-  background-color: #B9FFFD;
+  background: #B9FFFD;
   color: black;
 }
 
