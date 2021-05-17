@@ -12,6 +12,7 @@ export const UserContextProvider = (props) => {
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [userSavedJobs, setUserSavedJobs] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleUserChange = (event, formType) => {
     if (formType === 'firstName') {
@@ -34,14 +35,25 @@ export const UserContextProvider = (props) => {
   }
 
   const clearUserForm = () => {
-    setFirstName('')
-    setLastName('')
-    setCity('')
-    setState('')
-    setZipcode('')
-    setEmail('')
-    setPassword('')
-    setPasswordConfirmation('')
+    setFirstName('');
+    setLastName('');
+    setCity('');
+    setState('');
+    setZipcode('');
+    setEmail('');
+    setPassword('');
+    setPasswordConfirmation('');
+  }
+
+  const handleGoodLogin = (user) => {
+    setFirstName(user.first_name);
+    setLastName(user.last_name);
+    setCity(user.city);
+    setState(user.State);
+    setZipcode(user.zipcode);
+    setEmail(user.email);
+    setLoggedIn(true);
+    setPasswordConfirmation(password);
   }
 
   return (
@@ -56,7 +68,8 @@ export const UserContextProvider = (props) => {
       passwordConfirmation,
       userSavedJobs,
       handleUserChange,
-      clearUserForm}
+      clearUserForm,
+      handleGoodLogin}
      }>
       {props.children}
     </UserContext.Provider>

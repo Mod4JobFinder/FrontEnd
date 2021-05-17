@@ -1,43 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
 import { UserContext } from '../../Context/UserContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { postNewUser } from '../../apiCalls.js';
 
 
 function NewUserForm() {
-  const {firstName, lastName, email, city, state, zipcode, password, passwordConfirmation, handleUserChange, clearUserForm} = useContext(UserContext);
-  // const [firstName, setFirstName] = useState('');
-  // const [lastName, setLastName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [city, setCity] = useState('');
-  // const [state, setState] = useState('');
-  // const [zipcode, setZipcode] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [passwordConfirmation, setPasswordConfirmation] = useState('');
-
-  // const handleChange = (event, formType) => {
-  //   if (formType === 'firstName') {
-  //     setFirstName(event.target.value)
-  //   } else if (formType === 'lastName') {
-  //     setLastName(event.target.value)
-  //   } else if (formType === 'city') {
-  //     setCity(event.target.value)
-  //   } else if (formType === 'state') {
-  //     setState(event.target.value)
-  //   } else if (formType === 'zipcode') {
-  //     setZipcode(event.target.value)
-  //   } else if (formType === 'email') {
-  //     setEmail(event.target.value)
-  //   } else if (formType === 'password') {
-  //     setPassword(event.target.value)
-  //   } else if (formType === 'passwordConfirmation') {
-  //     setPasswordConfirmation(event.target.value)
-  //   }
-  // }
+  const {firstName, lastName, email, city, state, zipcode, password, passwordConfirmation, handleUserChange, clearUserForm, handleGoodLogin} = useContext(UserContext);
+  const history = useHistory
 
   const handleSubmitNew = (e) => {
-    const  test = {
+    const  user = {
       "email": email,
       "password": password,
       "password_confirmation": passwordConfirmation,
@@ -47,21 +20,19 @@ function NewUserForm() {
       "state": state,
       "zipcode": zipcode
     }
-    postNewUser(test)
-    .then(data => console.log(data))
-    clearUserForm()
+    postNewUser(user)
+    .then(data => loginCheck(data))
   }
 
-  // const clearForm = () => {
-  //     setFirstName('')
-  //     setLastName('')
-  //     setCity('')
-  //     setState('')
-  //     setZipcode('')
-  //     setEmail('')
-  //     setPassword('')
-  //     setPasswordConfirmation('')
-  // }
+  const loginCheck = (user) => {
+    if (user.error === 'invalid credentials') {
+      clearUserForm()
+      return
+    } else {
+      handleGoodLogin(user.data.attributes)
+      history.push('/JobsView');
+    }
+  }
 
   return(
     <section className='newUserFormLayout' data-cy='newUserFormLayout'>
@@ -149,10 +120,11 @@ function NewUserForm() {
         </article>
         <article className='submitBox'>
           <Link to={'/'}>Back To Login</Link>
-          <Link to={'/JobsView'} onClick={() => handleSubmitNew()} className='newUserSub' data-cy='newUserSub'>Submit New User</Link>
+            <button onClick={handleSubmitNew} className='newUserSub' data-cy='newUserSub'>Submit New User</button>
         </article>
     </section>
   )
 }
 
 export default NewUserForm
+// invalid parameters
