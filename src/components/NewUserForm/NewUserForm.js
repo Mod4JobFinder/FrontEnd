@@ -6,8 +6,17 @@ import { postNewUser } from '../../apiCalls.js';
 
 
 function NewUserForm() {
-  const {firstName, lastName, email, city, state, zipcode, password, passwordConfirmation, handleUserChange, clearUserForm, handleGoodLogin} = useContext(UserContext);
-  const history = useHistory
+  const {color, handleModeChange} = useContext(ThemeContext);
+  const {handleGoodLogin} = useContext(UserContext);
+  const history = useHistory();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
   const handleSubmitNew = (e) => {
     const  user = {
@@ -20,18 +29,33 @@ function NewUserForm() {
       "state": state,
       "zipcode": zipcode
     }
-    postNewUser(user)
-    .then(data => loginCheck(data))
+    if (password === passwordConfirmation && password.length >= 8) {
+      postNewUser(user)
+      .then(data => loginCheck(data))
+    } else {
+      return 'Password need to be 8 letters long.'
+    }
   }
 
   const loginCheck = (user) => {
-    if (user.error === 'invalid credentials') {
-      clearUserForm()
+    if (user.error === 'invalid parameters') {
+      clearUserForm();
       return
     } else {
       handleGoodLogin(user.data.attributes)
       history.push('/JobsView');
     }
+  }
+
+  const clearUserForm = () => {
+    setFirstName('');
+    setLastName('');
+    setCity('');
+    setState('');
+    setZipcode('');
+    setEmail('');
+    setPassword('');
+    setPasswordConfirmation('');
   }
 
   return(
@@ -42,7 +66,7 @@ function NewUserForm() {
             className='firstName'
             name='firstName'
             value={firstName}
-            onChange={event => handleUserChange(event, 'firstName')}
+            onChange={event => setFirstName(event.target.value)}
             type='text'
             aria-label='Input first name'
             placeholder='First Name'
@@ -52,7 +76,7 @@ function NewUserForm() {
             className='lastName'
             name='lastName'
             value={lastName}
-            onChange={event => handleUserChange(event, 'lastName')}
+            onChange={event => setLastName(event.target.value)}
             type='text'
             aria-label='Input last name'
             placeholder='Last Name'
@@ -62,7 +86,7 @@ function NewUserForm() {
             className='city'
             name='city'
             value={city}
-            onChange={event => handleUserChange(event, 'city')}
+            onChange={event => setCity(event.target.value)}
             type='text'
             aria-label='Input city'
             placeholder='City'
@@ -72,7 +96,7 @@ function NewUserForm() {
             className='state'
             name='state'
             value={state}
-            onChange={event => handleUserChange(event, 'state')}
+            onChange={event => setState(event.target.value)}
             type='text'
             aria-label='Input state'
             placeholder='State'
@@ -82,7 +106,7 @@ function NewUserForm() {
             className='zipcode'
             name='zipcode'
             value={zipcode}
-            onChange={event => handleUserChange(event, 'zipcode')}
+            onChange={event => setZipcode(event.target.value)}
             type='text'
             aria-label='Input zipcode'
             placeholder='Zipcode'
@@ -92,7 +116,7 @@ function NewUserForm() {
             className='email'
             name='email'
             value={email}
-            onChange={event => handleUserChange(event, 'email')}
+            onChange={event => setEmail(event.target.value)}
             type='text'
             aria-label='Input email'
             placeholder='Email'
@@ -102,7 +126,7 @@ function NewUserForm() {
             className='password'
             name='password'
             value={password}
-            onChange={event => handleUserChange(event, 'password')}
+            onChange={event => setPassword(event.target.value)}
             type='text'
             aria-label='Input password'
             placeholder='Password'
@@ -112,7 +136,7 @@ function NewUserForm() {
             className='passwordConfirmation'
             name='passwordConfirmation'
             value={passwordConfirmation}
-            onChange={event => handleUserChange(event, 'passwordConfirmation')}
+            onChange={event => setPasswordConfirmation(event.target.value)}
             type='text'
             aria-label='Input password confirmation'
             placeholder='Password Confirmation'
@@ -127,4 +151,3 @@ function NewUserForm() {
 }
 
 export default NewUserForm
-// invalid parameters

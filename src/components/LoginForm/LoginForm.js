@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
 import { UserContext } from '../../Context/UserContext';
 import { Link, useHistory } from 'react-router-dom';
@@ -6,28 +6,38 @@ import { postSession } from '../../apiCalls.js';
 import './LoginForm.css';
 
 function LoginForm() {
-  const { color, handleModeChange } = useContext(ThemeContext);
-  const { email, password, handleUserChange, handleGoodLogin, clearUserForm } = useContext(UserContext);
-  const history = useHistory ();
+  const {color, handleModeChange} = useContext(ThemeContext);
+  const {handleGoodLogin} = useContext(UserContext);
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = () => {
     const user = {
       "email": email,
       "password": password
     }
-    postSession(user)
-    .then(data => loginCheck(data))
+    if (password.length >= 8) {
+      postSession(user)
+      .then(data => loginCheck(data))
+    } else {
+      return 'Invalid password.'
+    }
   }
 
   const loginCheck = (user) => {
-    console.log(user)
-    if (user.error === 'invalid credentials') {
-      clearUserForm()
+    if (user.error === 'invalid parameters') {
+      clearSessionForm ();
       return
     } else {
       handleGoodLogin(user.data.attributes)
       history.push('/JobsView');
     }
+  }
+
+  const clearSessionForm = () => {
+    setEmail('');
+    setPassword('');
   }
 
   return (
@@ -39,7 +49,7 @@ function LoginForm() {
             className='login-input'
             name='email'
             value={email}
-            onChange={event => handleUserChange(event, 'email')}
+            onChange={event => setEmail(event.target.value)}
             type='text'
             aria-label='User email address'
             placeholder='User Email'
@@ -49,7 +59,7 @@ function LoginForm() {
             className='login-input'
             name='password'
             value={password}
-            onChange={event => handleUserChange(event, 'password')}
+            onChange={event => setPassword(event.target.value)}
             type='password'
             aria-label='user password input'
             placeholder='User Password'
@@ -65,4 +75,3 @@ function LoginForm() {
 }
 
 export default LoginForm
-// <Link to={'/JobsView'} className='loginButton' data-cy='loginButton'>Login</Link>
