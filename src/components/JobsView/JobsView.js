@@ -19,17 +19,16 @@ function JobsView() {
   }, [currentUser]);
 
   const handleUpdateSalaries = (data) => {
-    console.log(data)
-    console.log('setC', data.data[0].attributes.city)
+    const city = data.data[0].attributes.city
     const salaries = data.data
     setCurrentSalaries(salaries);
-    set
+    setCurrentCity(city)
   }
 
   const buildSalDisplay = currentSalaries.map(job => {
     return (
       <div className='salItem' key={job.id}>
-        <h2 className='salTitle'>{job.attributes.title}</h2>
+        <h1 className='salTitle'>{job.attributes.title}</h1>
         <p className='range' data-cy='range'>{`From ${job.attributes.min_salary} to ${job.attributes.min_salary}`}</p>
       </div>
     )
@@ -40,8 +39,8 @@ function JobsView() {
       <Header />
       <section className='formSec' data-cy='formSec'>
         {currentSalaries && <article className='salList' data-cy='salList'>
-            <h1 className='citySal' data-cy='citySal'>{`Current search is for `}</h1>
-           {buildSalDisplay}
+          <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
+          {buildSalDisplay}
         </article>}
         <SearchForm />
       </section>
