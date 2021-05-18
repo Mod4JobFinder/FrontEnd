@@ -13,7 +13,7 @@ export const UserContextProvider = (props) => {
   }
 
   return (
-    <UserContext.Provider value={{currentUser,userSavedJobs,loggedIn,handleGoodLogin}}>
+    <UserContext.Provider value={{currentUser,userSavedJobs,loggedIn,handleGoodLogin, setUserSavedJobs}}>
       {props.children}
     </UserContext.Provider>
   )
