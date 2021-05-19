@@ -29,7 +29,7 @@ function JobsView() {
     return (
       <div className='salItem' key={job.id}>
         <h1 className='salTitle'>{job.attributes.title}</h1>
-        <p className='range' data-cy='range'>{`From ${job.attributes.min_salary} to ${job.attributes.min_salary}`}</p>
+        <p className='range' data-cy='range'>{`${job.attributes.min_salary} to ${job.attributes.min_salary}`}</p>
       </div>
     )
   })
@@ -39,10 +39,14 @@ function JobsView() {
       <Header />
       <main className='jobViewLayout' data-cy='jobViewLayout'>
         {currentCity && <section className='formSec' data-cy='formSec'>
-          <article className='salList' data-cy='salList'>
-              <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
+          <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
+          <div className="formStlye">
+            <article className='salList' data-cy='salHeader'>
+              <article>
+            </article>
               {buildSalDisplay}
-          </article>
+            </article>
+          </div>
           <SearchForm />
         </section>}
       </main>
