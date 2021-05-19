@@ -4,7 +4,7 @@ import {ThemeContext} from '../../Context/ThemeContext';
 import {UserContext} from '../../Context/UserContext';
 import Header from '../Header/Header.js';
 import SearchForm from '../SearchForm/SearchForm.js';
-import { getSalary } from '../../apiCalls.js';
+import { getSalary, getJobs } from '../../apiCalls.js';
 
 function JobsView() {
   const {color} = useContext(ThemeContext);
@@ -34,6 +34,11 @@ function JobsView() {
     )
   })
 
+  const updataSearchedJobs = (searchCity, job) => {
+    getJobs(searchCity, job)
+    .then(data => console.log(data));
+  }
+
   return (
     <>
       <Header />
@@ -47,7 +52,7 @@ function JobsView() {
               {buildSalDisplay}
             </article>
           </div>
-          <SearchForm />
+          <SearchForm userCity={currentCity} updataSearchedJobs={updataSearchedJobs}/>
         </section>}
       </main>
     </>
