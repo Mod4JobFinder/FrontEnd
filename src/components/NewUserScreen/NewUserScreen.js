@@ -8,7 +8,7 @@ function NewUserScreen() {
   const {color} = useContext(ThemeContext);
   return (
     <main>
-      <Header />
+      <Header hidden={'hidden'}/>
       <NewUserForm />
     </main>
   )

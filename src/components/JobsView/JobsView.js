@@ -64,7 +64,7 @@ function JobsView() {
 
   return (
     <>
-      <Header />
+      <Header hidden={''}/>
       <main className='jobViewLayout' data-cy='jobViewLayout'>
         {currentCity && <section className='formSec' data-cy='formSec'>
           <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
