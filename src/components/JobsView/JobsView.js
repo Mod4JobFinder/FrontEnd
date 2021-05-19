@@ -9,7 +9,7 @@ import JobCard from '../JobCard/JobCard.js';
 
 function JobsView() {
   const {color} = useContext(ThemeContext);
-  const {currentUser ,setUserSavedJobs} = useContext(UserContext);
+  const {currentUser ,saveJob} = useContext(UserContext);
   const [jobList, setJobsList] = useState([]);
   const [currentSalaries, setCurrentSalaries] = useState([]);
   const [currentCity, setCurrentCity] = useState('');
@@ -18,20 +18,6 @@ function JobsView() {
     getSalary(currentUser.city)
     .then(data =>  handleUpdateSalaries(data))
   }, [currentUser]);
-
-  const buildJobsDisplay = jobList.map(job => {
-    return (
-      <JobCard
-        jobTitle={job.attributes.title}
-        company={job.attributes.company}
-        location={job.attributes.location}
-        date={job.attributes.date}
-        key={job.id}
-        id={job.id}
-       />
-    )
-  })
-
 
   const handleUpdateSalaries = (data) => {
     const city = data.data[0].attributes.city
@@ -55,6 +41,26 @@ function JobsView() {
     getSalary(searchCity)
     .then(data =>  handleUpdateSalaries(data))
   }
+
+  const handleYesJob = (e) => {
+    const id = e.target.id
+    const toSave = jobList.find(job => job.id === id);
+    saveJob(toSave);
+  }
+
+  const buildJobsDisplay = jobList.map(job => {
+    return (
+      <JobCard
+        handleYesJob={handleYesJob}
+        jobTitle={job.attributes.title}
+        company={job.attributes.company}
+        location={job.attributes.location}
+        date={job.attributes.date}
+        key={job.id}
+        id={job.id}
+       />
+    )
+  })
 
   return (
     <>
