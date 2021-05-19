@@ -29,7 +29,7 @@ function JobsView() {
     return (
       <div className='salItem' key={job.id}>
         <h1 className='salTitle'>{job.attributes.title}</h1>
-        <p className='range' data-cy='range'>{`${job.attributes.min_salary} to ${job.attributes.min_salary}`}</p>
+        <p className='range' data-cy='range'>{`${job.attributes.min_salary} to ${job.attributes.max_salary}`}</p>
       </div>
     )
   })

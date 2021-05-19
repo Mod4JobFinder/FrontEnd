@@ -7,7 +7,6 @@ function SearchForm() {
   const [city, setCity] = useState('');
   const [jobTitle, setJobTitle]= useState('');
 
-
   return (
     <section>
       <article className='jobFilter' data-cy='jobFilter'>
@@ -24,20 +23,9 @@ function SearchForm() {
           className='cityInput'
           name='city'
           value={city}
-          onChange={event => setEmail(event.target.value)}
           type='text'
           aria-label='city to search'
           placeholder='City'
-        />
-        <input
-          data-cy='state'
-          className='stateInput'
-          name='state'
-          value={state}
-          onChange={event => setPassword(event.target.value)}
-          type='state'
-          aria-label='state to search'
-          placeholder='State'
         />
       </article>
     </section>
