@@ -37,7 +37,7 @@ function JobsView() {
 
   const updataSearchedJobs = (searchCity, job) => {
     getJobs(searchCity, job)
-    .then(data => setJobsList(data.data));
+    .then(data => setJobsList(data.data))
     getSalary(searchCity)
     .then(data =>  handleUpdateSalaries(data))
   }

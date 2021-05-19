@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
 import './SearchForm.css';
 
-function SearchForm({ userCity, updataSearchedJobs }) {
+function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
   const { color } = useContext(ThemeContext)
   const [city, setCity] = useState('');
   const [jobTitle, setJobTitle]= useState('');
@@ -33,7 +33,7 @@ function SearchForm({ userCity, updataSearchedJobs }) {
 
   return (
     <section>
-      <p>{`Search for ${jobTitle} in ${city}?`}</p>
+      <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle} in ${city}?`}</p>
       <article className='jobFilter' data-cy='jobFilter'>
         <button className='dataAnalyst' data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
         <button className='dataScientist' data-cy='dataScientist' onClick={e => handleJobButton('Data Scientist')}>Data Scientist</button>
@@ -44,7 +44,7 @@ function SearchForm({ userCity, updataSearchedJobs }) {
       </article>
       <article>
         <input
-          data-cy='city'
+          data-cy='cityInput'
           className='cityInput'
           name='city'
           value={city}
