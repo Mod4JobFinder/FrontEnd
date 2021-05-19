@@ -2,6 +2,7 @@ Cypress.Commands.add('stubbedInercepts', () => {
   cy.stubPostNewUser();
   cy.stubPostSession();
   cy.stubGetSalary();
+  cy.stubGetJobs();
   cy.visit('http://localhost:3000/')
 })
 
@@ -25,4 +26,8 @@ Cypress.Commands.add('stubPostSession', () => {
 
 Cypress.Commands.add("stubGetSalary", () => {
   cy.intercept('https://findjob-backend.herokuapp.com/api/v1/salaries?city=Chicago', {fixture: 'MockSalData.js'})
+})
+
+Cypress.Commands.add("stubGetJobs", () => {
+  cy.intercept('https://findjob-backend.herokuapp.com/api/v1/salaries?city=Chicago&title=web%20developer', {fixture: 'MockJobListData.js'})
 })
