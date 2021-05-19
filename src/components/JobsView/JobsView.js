@@ -5,6 +5,7 @@ import {UserContext} from '../../Context/UserContext';
 import Header from '../Header/Header.js';
 import SearchForm from '../SearchForm/SearchForm.js';
 import { getSalary, getJobs } from '../../apiCalls.js';
+import JobCard from '../JobCard/JobCard.js';
 
 function JobsView() {
   const {color} = useContext(ThemeContext);
@@ -17,6 +18,20 @@ function JobsView() {
     getSalary(currentUser.city)
     .then(data =>  handleUpdateSalaries(data))
   }, [currentUser]);
+
+  const buildJobsDisplay = jobList.map(job => {
+    return (
+      <JobCard
+        jobTitle={job.attributes.title}
+        company={job.attributes.company}
+        location={job.attributes.location}
+        date={job.attributes.date}
+        key={job.id}
+        id={job.id}
+       />
+    )
+  })
+
 
   const handleUpdateSalaries = (data) => {
     const city = data.data[0].attributes.city
@@ -55,6 +70,9 @@ function JobsView() {
             </article>
           </div>
           <SearchForm userCity={currentCity} updataSearchedJobs={updataSearchedJobs}/>
+        </section>}
+        {jobList && <section className='currentJobDisplaySection'>
+          {buildJobsDisplay}
         </section>}
       </main>
     </>
