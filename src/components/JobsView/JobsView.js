@@ -35,16 +35,18 @@ function JobsView() {
   })
 
   return (
-    <main className='jobViewLayout' data-cy='jobViewLayout'>
+    <>
       <Header />
-      <section className='formSec' data-cy='formSec'>
-        {currentSalaries && <article className='salList' data-cy='salList'>
-          <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
-          {buildSalDisplay}
-        </article>}
-        <SearchForm />
-      </section>
-    </main>
+      <main className='jobViewLayout' data-cy='jobViewLayout'>
+        {currentCity && <section className='formSec' data-cy='formSec'>
+          <article className='salList' data-cy='salList'>
+              <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
+              {buildSalDisplay}
+          </article>
+          <SearchForm />
+        </section>}
+      </main>
+    </>
   );
 }
 
