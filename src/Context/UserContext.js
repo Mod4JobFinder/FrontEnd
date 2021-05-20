@@ -10,6 +10,9 @@ export const UserContextProvider = (props) => {
   const handleGoodLogin = (user) => {
     setCurrentUser(user)
     setLoggedIn(true);
+    if (user.saved_jobs.length) {
+      setUserSavedJobs(user.saved_jobs)
+    }
   }
 
   const saveJob = (job) => {
