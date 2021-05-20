@@ -37,7 +37,6 @@ function NewUserForm() {
   }
 
   const loginCheck = (user) => {
-    console.log(user)
     if (user.error === 'invalid parameters') {
       clearUserForm();
       return
