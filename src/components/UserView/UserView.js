@@ -3,7 +3,9 @@ import './UserView.css';
 
 function UserView() {
   return (
-    <p>Test 3</p>
+    <div data-cy='userView'>
+      <p>Test 3</p>
+    </div>  
   );
 }
 

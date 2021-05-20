@@ -12,7 +12,7 @@ Cypress.Commands.add('stubPostNewUser', () => {
       headers: {
         "content-type": "application/json"
       }
-    }, { fixture: 'MockUserData.js' })
+    }, { fixture:'MockUserData.js' })
 })
 
 Cypress.Commands.add('stubPostSession', () => {
@@ -21,13 +21,14 @@ Cypress.Commands.add('stubPostSession', () => {
       headers: {
         "content-type": "application/json"
       }
-    }, { fixture: 'MockUserData.js' })
+    }, { fixture:'MockUserData.js' })
 })
 
 Cypress.Commands.add("stubGetSalary", () => {
-  cy.intercept('https://findjob-backend.herokuapp.com/api/v1/salaries?city=denver', {fixture: 'MockSalData.js'})
+  cy.intercept('https://findjob-backend.herokuapp.com/api/v1/salaries?city=denver',
+   {fixture:'MockSalData.js'})
 })
 
 Cypress.Commands.add("stubGetJobs", () => {
-  cy.intercept('https://findjob-backend.herokuapp.com/api/v1/jobs?city=denver&title=web%20developer', {fixture: 'MockJobListData.js'})
+  cy.intercept('https://findjob-backend.herokuapp.com/api/v1/jobs?city=denver&title=web%20developer', {fixture:'MockJobListData.js'})
 })

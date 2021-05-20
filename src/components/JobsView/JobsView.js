@@ -15,15 +15,14 @@ function JobsView() {
   const [currentCity, setCurrentCity] = useState('');
 
   useEffect(() => {
+    setCurrentCity(currentUser.city)
     getSalary(currentUser.city)
     .then(data =>  handleUpdateSalaries(data))
   }, [currentUser]);
 
   const handleUpdateSalaries = (data) => {
-    const city = data.data[0].attributes.city
     const salaries = data.data
     setCurrentSalaries(salaries);
-    setCurrentCity(city)
   }
 
   const buildSalDisplay = currentSalaries.map(job => {
@@ -36,10 +35,9 @@ function JobsView() {
   })
 
   const updataSearchedJobs = (searchCity, job) => {
+    setCurrentCity(searchCity)
     getJobs(searchCity, job)
     .then(data => setJobsList(data.data))
-    getSalary(searchCity)
-    .then(data =>  handleUpdateSalaries(data))
   }
 
   const handleYesJob = (e) => {
@@ -58,7 +56,7 @@ function JobsView() {
         date={job.attributes.date}
         key={job.id}
         id={job.id}
-       />
+      />
     )
   })
 

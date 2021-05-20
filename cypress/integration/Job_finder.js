@@ -55,6 +55,9 @@ context('Job_finder', () => {
     .get('[data-cy=webDev]').click()
     .get('[data-cy=searchCommit]').contains('Search for Web Developer in denver?')
     .get('[data-cy=submitSearch]').click()
+    .get('[data-cy=jobCard]').should('exist')
+    .get('[data-cy=userlink]').click()
+    .get('[data-cy=userView]').should('exist')
   })
 
 })
