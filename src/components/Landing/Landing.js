@@ -9,7 +9,7 @@ function Landing() {
 
   return (
     <main className={`LandingLayout ${color}`}>
-      <Header />
+      <Header hidden={'hidden'}/>
       <LoginForm />
     </main>
   );

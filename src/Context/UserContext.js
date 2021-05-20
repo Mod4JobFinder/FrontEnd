@@ -12,8 +12,17 @@ export const UserContextProvider = (props) => {
     setLoggedIn(true);
   }
 
+  const saveJob = (job) => {
+    if (!userSavedJobs.length) {
+      setUserSavedJobs([job])
+    } else {
+      const storedJobs = userSavedJobs
+      setUserSavedJobs([...storedJobs, job])
+    }
+  }
+
   return (
-    <UserContext.Provider value={{currentUser,userSavedJobs,loggedIn,handleGoodLogin}}>
+    <UserContext.Provider value={{currentUser,userSavedJobs,loggedIn,handleGoodLogin, saveJob}}>
       {props.children}
     </UserContext.Provider>
   )

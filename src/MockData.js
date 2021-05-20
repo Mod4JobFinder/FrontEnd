@@ -35,23 +35,23 @@ export const mockUserData = {
 export const mockJobsList = {
   "data": [{
     "id": 1,
-    "type": "Part Time",
+    "type": "job listing",
     "attributes": { "title": "Software1", "company": "Google", "category": ["ALL", 'The', 'Tags'], "description": "Are to a dev?", "location": "Anywhere", "publish_date": "datetime", "link": "https://github.com/orgs/Mod4JobFinder/projects/1" }
   }, {
     "id": 2,
-    "type": "Part Time",
+    "type": "job listing",
     "attributes": { "title": "Software2", "company": "Google", "category": ["ALL", 'The', 'Tags'], "description": "Are to a dev?", "location": "Anywhere", "publish_date": "datetime", "link": "https://github.com/orgs/Mod4JobFinder/projects/1" }
   }, {
     "id": 3,
-    "type": "Part Time",
+    "type": "job listing",
     "attributes": { "title": "Software3", "company": "Google", "category": ["ALL", 'The', 'Tags'], "description": "Are to a dev?", "location": "Anywhere", "publish_date": "datetime", "link": "https://github.com/orgs/Mod4JobFinder/projects/1" }
   }, {
     "id": 4,
-    "type": "Full Time",
+    "type": "job listing",
     "attributes": { "title": "Software4", "company": "Google", "category": ["ALL", 'The', 'Tags'], "description": "Are to a dev?", "location": "Anywhere", "publish_date": "datetime", "link": "https://github.com/orgs/Mod4JobFinder/projects/1" }
   }, {
     "id": 5,
-    "type": "Full Time",
+    "type": "job listing",
     "attributes": { "title": "Software5", "company": "Google", "category": ["ALL", 'The', 'Tags'], "description": "Are to a dev?", "location": "Anywhere", "publish_date": "datetime", "link": "https://github.com/orgs/Mod4JobFinder/projects/1" }
   }, {
     "id": 6,
