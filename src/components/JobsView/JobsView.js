@@ -43,12 +43,20 @@ function JobsView() {
   const handleYesJob = (e) => {
     const id = e.target.id
     const toSave = jobList.find(job => job.id === id);
+    updateList(e)
     saveJob(toSave);
+  }
+
+  const updateList = (e) => {
+    const id = e.target.id
+    const list = jobList.filter(job => job.id !== id)
+    setJobsList(list);
   }
 
   const buildJobsDisplay = jobList.map(job => {
     return (
       <JobCard
+       updateList={updateList}
         handleYesJob={handleYesJob}
         jobTitle={job.attributes.title}
         company={job.attributes.company}
