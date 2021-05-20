@@ -1,11 +1,16 @@
 import React from 'react';
 import './UserView.css';
+import Header from '../Header/Header.js';
+import SaveCard from '../SaveCard/SaveCard.js';
+import JobDetail from '../JobDetail/JobDetail.js';
 
 function UserView() {
   return (
-    <div data-cy='userView'>
-      <p>Test 3</p>
-    </div>  
+    <>
+      <Header />
+      <SaveCard />
+      <JobDetail />
+    </>
   );
 }
 

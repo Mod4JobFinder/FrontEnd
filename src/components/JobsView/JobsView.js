@@ -4,7 +4,7 @@ import {ThemeContext} from '../../Context/ThemeContext';
 import {UserContext} from '../../Context/UserContext';
 import Header from '../Header/Header.js';
 import SearchForm from '../SearchForm/SearchForm.js';
-import { getSalary, getJobs } from '../../apiCalls.js';
+import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
 import JobCard from '../JobCard/JobCard.js';
 
 function JobsView() {
@@ -44,7 +44,8 @@ function JobsView() {
     const id = e.target.id
     const toSave = jobList.find(job => job.id === id);
     updateList(e)
-    saveJob(toSave);
+    postJobToUser({email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description})
+    .then(data => saveJob(data.data.attributes))
   }
 
   const updateList = (e) => {
@@ -56,7 +57,7 @@ function JobsView() {
   const buildJobsDisplay = jobList.map(job => {
     return (
       <JobCard
-       updateList={updateList}
+        updateList={updateList}
         handleYesJob={handleYesJob}
         jobTitle={job.attributes.title}
         company={job.attributes.company}
