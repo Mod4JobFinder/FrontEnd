@@ -1,9 +1,11 @@
 import React from 'react';
 import './JobDetail.css';
 
-function JobDetail() {
+function JobDetail( {title, company, location, description, url} ) {
   return (
-    <p>Job Detail Section</p>
+    <section>
+
+    </section>
   )
 }
 
