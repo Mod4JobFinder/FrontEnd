@@ -5,6 +5,7 @@ import SaveCard from '../SaveCard/SaveCard.js';
 import JobDetail from '../JobDetail/JobDetail.js';
 import {ThemeContext} from '../../Context/ThemeContext';
 import {UserContext} from '../../Context/UserContext';
+import {deleteJobFromUser} from '../../apiCalls.js';
 
 function UserView() {
   const {currentUser , userSavedJobs, setUserSavedJobs} = useContext(UserContext);
@@ -19,6 +20,12 @@ function UserView() {
     const id = buttonId
     const toDetail = savJobList.find(job => job.id === id);
     setDetailJob(toDetail);
+  }
+
+  const deleteJob = (idToDelete) => {
+    const jobToDelete = ({id: idToDelete})
+    deleteJobFromUser(jobToDelete)
+    .then(data => console.log(data))
   }
 
   const buildSaveCards = savJobList.map(job => {
@@ -42,6 +49,7 @@ function UserView() {
         </section>
       <section className='jobDetailLayout' data-cy='jobDetailLayout'>
         <JobDetail
+          deleteJob={deleteJob}
           id={detailJob.id}
           title={detailJob.title}
           company={detailJob.company}
