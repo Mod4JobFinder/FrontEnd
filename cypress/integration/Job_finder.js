@@ -69,10 +69,9 @@ context('Job_finder', () => {
     .get('[data-cy=userlink]').click()
     .get('[data-cy=userView]').should('exist')
     .get('[data-cy=headerLayout]').should('exist')
-    .get('[data-cy=saveCardsLayout]').shoud('exist')
     .get('[data-cy=savedCard]').first().click()
     .get('[data-cy=jobDetailLayout]').should('exist')
-    
+
   })
 
 
