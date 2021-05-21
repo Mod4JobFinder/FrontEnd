@@ -20,6 +20,7 @@ function LoginForm() {
     if (password.length >= 8) {
       postSession(user)
       .then(data => loginCheck(data))
+      .catch(err => console.log(err))
     } else {
       return 'Invalid password.'
     }

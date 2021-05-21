@@ -6,7 +6,6 @@ import JobDetail from '../JobDetail/JobDetail.js';
 import {ThemeContext} from '../../Context/ThemeContext';
 import {UserContext} from '../../Context/UserContext';
 
-
 function UserView() {
   const {currentUser , userSavedJobs, setUserSavedJobs} = useContext(UserContext);
   const [detailJob, setDetailJob] = useState({});

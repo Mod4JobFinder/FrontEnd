@@ -31,6 +31,7 @@ function NewUserForm() {
     if (password === passwordConfirmation && password.length >= 8) {
       postNewUser(user)
       .then(data => loginCheck(data))
+      .catch(err => console.log(err))
     } else {
       return 'Password need to be 8 letters long.'
     }
