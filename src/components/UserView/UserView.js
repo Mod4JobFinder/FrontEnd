@@ -41,14 +41,16 @@ function UserView() {
         <section>
           {buildSaveCards}
         </section>
-      <JobDetail
-        id={detailJob.id}
-        title={detailJob.title}
-        company={detailJob.company}
-        location={detailJob.location}
-        description={detailJob.description}
-        url={detailJob.url}
-       />
+      <section>
+        <JobDetail
+          id={detailJob.id}
+          title={detailJob.title}
+          company={detailJob.company}
+          location={detailJob.location}
+          description={detailJob.description}
+          url={detailJob.url}
+         />
+      </section>
     </>
   )
 }
