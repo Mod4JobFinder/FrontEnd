@@ -60,4 +60,21 @@ context('Job_finder', () => {
     .get('[data-cy=userView]').should('exist')
   })
 
+  it('Should be able to link to a users page and show a list of all their save jobs with the ability to veiw details about each one.', () => {
+    cy.stubbedInercepts()
+    .get('[data-cy=loginForm]').should('exist')
+    .get('[data-cy=email]').type('AmieDog@gmail.com').should('have.value', 'AmieDog@gmail.com')
+    .get('[data-cy=password]').type('Amie123456').should('have.value', 'Amie123456')
+    .get('[data-cy=loginButton]').click()
+    .get('[data-cy=userlink]').click()
+    .get('[data-cy=userView]').should('exist')
+    .get('[data-cy=headerLayout]').should('exist')
+    .get('[data-cy=saveCardsLayout]').shoud('exist')
+    .get('[data-cy=savedCard]').first().click()
+    .get('[data-cy=jobDetailLayout]').should('exist')
+    
+  })
+
+
+
 })
