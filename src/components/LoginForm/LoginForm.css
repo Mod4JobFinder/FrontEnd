@@ -7,14 +7,23 @@
 }
 
 .loginFormLayout {
-
 }
 
 .loginForm {
+  display: flex;
+  flex-direction: column;
   height: 35vh;
   width: 50vw;
 }
 
+.login-input {
+  margin: 25px;
+}
+
+.submitBox {
+  display: flex;
+  justify-content: space-around;
+}
 
 /* Utility classes */
 .light {
