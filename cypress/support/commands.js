@@ -3,6 +3,7 @@ Cypress.Commands.add('stubbedInercepts', () => {
   cy.stubPostSession();
   cy.stubGetSalary();
   cy.stubGetJobs();
+  cy.stubPostJobToUser();
   cy.visit('http://localhost:3000/')
 })
 
