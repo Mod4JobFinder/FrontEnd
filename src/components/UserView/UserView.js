@@ -36,12 +36,12 @@ function UserView() {
   })
 
   return (
-    <>
+    <div className='userView' data-cy='userView'>
       <Header />
-        <section>
+        <section className='saveCardsLayout' data-cy='saveCardsLayout'>
           {buildSaveCards}
         </section>
-      <section>
+      <section className='jobDetailLayout' data-cy='jobDetailLayout'>
         <JobDetail
           id={detailJob.id}
           title={detailJob.title}
@@ -51,7 +51,7 @@ function UserView() {
           url={detailJob.url}
          />
       </section>
-    </>
+    </div>
   )
 }
 

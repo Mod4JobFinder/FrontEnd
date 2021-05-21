@@ -3,16 +3,16 @@ import './JobDetail.css';
 
 function JobDetail( {title, company, location, description, url} ) {
   return (
-    <section>
-      <h1>{title}</h1>
+    <article className='detailSec' data-cy='detailSec'>
+      <h1 className='detTitle' data-cy='detTitle'>{title}</h1>
       <div>
-        <p>{company}</p>
-        <p>{location}</p>
-        <p>{description}</p>
-        <a href={url}>Apply Here</a>
-        <button>Nevermind Get rid of this one</button>
+        <p className='detComp' data-cy='detComp'>{company}</p>
+        <p className='detLocal' data-cy='detLocal'>{location}</p>
+        <p className='detDesc' data-cy='detDesc'>{description}</p>
+        <a href={url} className='detUrl' data-cy='detUrl'>Apply Here</a>
+        <button className='deleteJobButton' data-cy='deleteJobButton'>Nevermind Get rid of this one</button>
       </div>
-    </section>
+    </article>
   )
 }
 
