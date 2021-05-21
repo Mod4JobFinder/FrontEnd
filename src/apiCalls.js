@@ -3,7 +3,6 @@ const usersUrl = 'https://findjob-backend.herokuapp.com/api/v1/users'
 const loginUrl = 'https://findjob-backend.herokuapp.com/api/v1/sessions'
 const jobsUrl = 'https://findjob-backend.herokuapp.com/api/v1/jobs?city='
 const saveUrl = 'https://findjob-backend.herokuapp.com/api/v1/saved_jobs'
-// // const usersUrl = 'https://findjob-backend.herokuapp.com/api/v1/'
 
 export const postNewUser = (newUser) => {
   return fetch(`${usersUrl}`, {
@@ -44,6 +43,17 @@ export const postJobToUser = (userJob) => {
       "Content-Type": "application/json"
     },
       body: JSON.stringify(userJob)
+  })
+  .then(response => response.json())
+}
+
+export const deleteJobToUser = (deleteJob) => {
+  return fetch(`${saveUrl}`, {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json"
+    },
+      body: JSON.stringify(deleteJob)
   })
   .then(response => response.json())
 }
