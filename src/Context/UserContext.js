@@ -24,8 +24,13 @@ export const UserContextProvider = (props) => {
     }
   }
 
+  const deleteJobUser = (idToDelete) => {
+    const toUpdateJobs = userSavedJobs.filter(job => job.id !== idToDelete)
+    setUserSavedJobs(toUpdateJobs)
+  }
+
   return (
-    <UserContext.Provider value={{currentUser,userSavedJobs,loggedIn,handleGoodLogin, saveJob, setUserSavedJobs}}>
+    <UserContext.Provider value={{currentUser,userSavedJobs,loggedIn,handleGoodLogin, saveJob, setUserSavedJobs, deleteJobUser}}>
       {props.children}
     </UserContext.Provider>
   )
