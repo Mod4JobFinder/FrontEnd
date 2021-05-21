@@ -71,7 +71,6 @@ context('Job_finder', () => {
     .get('[data-cy=headerLayout]').should('exist')
     .get('[data-cy=savedCard]').first().click()
     .get('[data-cy=jobDetailLayout]').should('exist')
-
   })
 
 

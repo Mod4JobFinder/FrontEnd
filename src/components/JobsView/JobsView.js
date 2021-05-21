@@ -18,6 +18,7 @@ function JobsView() {
     setCurrentCity(currentUser.city)
     getSalary(currentUser.city)
     .then(data =>  handleUpdateSalaries(data))
+    .catch(err => console.log(err))
   }, [currentUser]);
 
   const handleUpdateSalaries = (data) => {
@@ -38,6 +39,7 @@ function JobsView() {
     setCurrentCity(searchCity)
     getJobs(searchCity, job)
     .then(data => setJobsList(data.data))
+    .catch(err => console.log(err))
   }
 
   const handleYesJob = (e) => {
@@ -46,6 +48,7 @@ function JobsView() {
     updateList(e)
     postJobToUser({email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description})
     .then(data => saveJob(data.data.attributes))
+    .catch(err => console.log(err))
   }
 
   const updateList = (e) => {
