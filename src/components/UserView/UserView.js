@@ -8,7 +8,7 @@ import {UserContext} from '../../Context/UserContext';
 import {deleteJobFromUser} from '../../apiCalls.js';
 
 function UserView() {
-  const {currentUser , userSavedJobs, setUserSavedJobs} = useContext(UserContext);
+  const {currentUser , userSavedJobs, setUserSavedJobs, deleteJobUser} = useContext(UserContext);
   const [detailJob, setDetailJob] = useState({});
   const [savJobList, setSavJobList] = useState([]);
 
@@ -23,6 +23,7 @@ function UserView() {
   }
 
   const deleteJob = (idToDelete) => {
+    deleteJobUser(idToDelete)
     const jobToDelete = ({id: idToDelete})
     deleteJobFromUser(jobToDelete)
     .then(data => console.log(data))
@@ -42,23 +43,25 @@ function UserView() {
   })
 
   return (
-    <div className='userView' data-cy='userView'>
+    <>
       <Header />
+      <div className='userView' data-cy='userView'>
         <section className='saveCardsLayout' data-cy='saveCardsLayout'>
           {buildSaveCards}
         </section>
-      <section className='jobDetailLayout' data-cy='jobDetailLayout'>
-        <JobDetail
-          deleteJob={deleteJob}
-          id={detailJob.id}
-          title={detailJob.title}
-          company={detailJob.company}
-          location={detailJob.location}
-          description={detailJob.description}
-          url={detailJob.url}
-         />
-      </section>
-    </div>
+        <section className='jobDetailLayout' data-cy='jobDetailLayout'>
+          <JobDetail
+            deleteJob={deleteJob}
+            id={detailJob.id}
+            title={detailJob.title}
+            company={detailJob.company}
+            location={detailJob.location}
+            description={detailJob.description}
+            url={detailJob.url}
+          />
+        </section>
+      </div>
+    </>
   )
 }
 
