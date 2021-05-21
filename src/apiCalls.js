@@ -47,7 +47,7 @@ export const postJobToUser = (userJob) => {
   .then(response => response.json())
 }
 
-export const deleteJobToUser = (deleteJob) => {
+export const deleteJobFromUser = (deleteJob) => {
   return fetch(`${saveUrl}`, {
     method: 'DELETE',
     headers: {
