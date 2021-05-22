@@ -6,47 +6,47 @@ export const ThemeContextProvider = (props) => {
 
     const lightMode = {
       blue: {
-        backgroundColor: 'darkblue',
-        color: 'white',
+        backgroundColor: '#3B27BA',
+        color: '#FFFFFF',
       },
       pink: {
-        backgroundColor: 'violet',
-        color: 'white',
+        backgroundColor: '#E847AE',
+        color: '#FFFFFF',
       },
       green: {
-        backgroundColor: 'mediumseagreen',
-        color: 'black',
+        backgroundColor: '#13CA91',
+        color: '#000000',
       },
       orange: {
-        backgroundColor: 'darkorange',
-        color: 'black',
+        backgroundColor: '#FF9472',
+        color: '#000000',
       },
       pageBackGround: {
-        backgroundColor: 'white',
-        color: 'black',
+        backgroundColor: '#FFFFFF',
+        color: '#000000',
       }
     }
 
     const darkMode = {
       blue: {
-        backgroundColor: 'powderblue',
-        color: 'black',
+        backgroundColor: '#B9FFFD',
+        color: '#000000',
       },
       pink: {
-        backgroundColor: 'plum',
-        color: 'black',
+        backgroundColor: '#FFB3FD',
+        color: '#000000',
       },
       green: {
-        backgroundColor: 'springgreen',
-        color: 'black',
+        backgroundColor: '#01FFC3',
+        color: '#000000',
       },
       orange: {
-        backgroundColor: 'orange',
-        color: 'black',
+        backgroundColor: '#FFBE7B',
+        color: '#000000',
       },
       pageBackGround: {
-        backgroundColor: 'black',
-        color: 'white',
+        backgroundColor: '#000000',
+        color: '#FFFFFF',
       }
     }
 
