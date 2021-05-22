@@ -33,7 +33,7 @@ function NewUserForm() {
       .then(data => loginCheck(data))
       .catch(err => console.log(err))
     } else {
-      return 'Password need to be 8 letters long.'
+      return 'Password need to be 8 characters long.'
     }
   }
 
