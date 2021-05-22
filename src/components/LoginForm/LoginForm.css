@@ -23,6 +23,16 @@
 .submitBox {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.loginButton {
+  background-color: #FFBE7B;
+  border-radius: 5px;
+  height: 40px;
+  width: 125px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* Utility classes */
