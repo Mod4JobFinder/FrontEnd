@@ -8,6 +8,7 @@ import {UserContext} from '../../Context/UserContext';
 import {deleteJobFromUser} from '../../apiCalls.js';
 
 function UserView() {
+  const {color} = useContext(ThemeContext);
   const {currentUser , userSavedJobs, setUserSavedJobs, deleteJobUser} = useContext(UserContext);
   const [detailJob, setDetailJob] = useState({});
   const [savJobList, setSavJobList] = useState([]);
@@ -45,7 +46,7 @@ function UserView() {
   return (
     <>
       <Header />
-      <div className='userView' data-cy='userView'>
+      <div className='userView' data-cy='userView' style={color.pageBackGround}>
         <section className='saveCardsLayout' data-cy='saveCardsLayout'>
           {buildSaveCards}
         </section>
