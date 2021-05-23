@@ -42,10 +42,10 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
         <button className='filtBut sysAdmin' data-cy='sysAdmin' onClick={e => handleJobButton('Systems Administrator')}>Systems Admin</button>
         <button className='filtBut webDev' data-cy='webDev' onClick={e => handleJobButton('Web Developer')}>Web Developer</button>
       </article>
-      <article>
+      <article className='searchBar'>
         <input
           data-cy='cityInput'
-          className='cityInput'
+          className='sb cityInput'
           name='city'
           value={city}
           onChange={event => setCity(event.target.value)}
@@ -53,8 +53,8 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
           aria-label='city to search'
           placeholder='City'
         />
-        <button className='submitSearch' data-cy='submitSearch' onClick={handleSubmitSearch}>Submit</button>
-        <button className='clearSearch' data-cy='clearSearch' onClick={clearSearch}>Clear Search</button>
+        <button className='sb submitSearch' data-cy='submitSearch' onClick={handleSubmitSearch}>Submit</button>
+        <button className='sb clearSearch' data-cy='clearSearch' onClick={clearSearch}>Clear Search</button>
       </article>
     </section>
   )

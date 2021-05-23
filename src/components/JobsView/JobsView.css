@@ -1,7 +1,9 @@
 .jobViewLayout {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 90vh;
+  align-items: center;
+  height: auto;
   width: 100vw;
 }
 
@@ -15,6 +17,7 @@
 
 .citySal {
   text-align: center;
+  cursor: default;
 }
 
 .allSal {
@@ -33,6 +36,7 @@
 .salItem {
   width: 100%;
   text-align: center;
+  cursor: default;
 }
 
 .salTitle {

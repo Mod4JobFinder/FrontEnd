@@ -10,4 +10,35 @@
   font-weight: bold;
   border-radius: 10px;
   background-color: #FFBE7B;
+  cursor: pointer;
+}
+
+.searchBar {
+  margin: 25px;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.searchCommit {
+  text-align: center;
+  font-weight: bold;
+  cursor: default;
+}
+
+.sb {
+  width: 150px;
+  border-radius: 10px;
+}
+
+.submitSearch {
+  background-color: #01FFC3;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clearSearch {
+  background-color: #FFB3FD;
+  font-weight: bold;
+  cursor: pointer;
 }
