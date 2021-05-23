@@ -1,5 +1,5 @@
 import React from 'react';
-import './SaveCard.js';
+import './SaveCard.css';
 
 function SaveCard({ title,company , location, id, updateDetailJob }) {
   return (
