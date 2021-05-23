@@ -5,6 +5,8 @@
   grid-template-rows: auto;
   grid-gap: .5rem;
   padding: .5rem;
+  height: 88vh;
+  overflow: scroll;
 }
 
 .userView {
@@ -16,5 +18,7 @@
 }
 
 .jobDetailLayout {
+  height: 88vh;
   grid-area: desc;
+  overflow: scroll;
 }
