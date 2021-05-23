@@ -35,12 +35,12 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
     <section>
       <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle} in ${city}?`}</p>
       <article className='jobFilter' data-cy='jobFilter'>
-        <button className='dataAnalyst' data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
-        <button className='dataScientist' data-cy='dataScientist' onClick={e => handleJobButton('Data Scientist')}>Data Scientist</button>
-        <button className='mobileDev' data-cy='mobileDev' onClick={e => handleJobButton('Mobile Developer')}>Mobile Developer</button>
-        <button className='qaEngineer' data-cy='qaEngineer' onClick={e => handleJobButton('QA Engineer')}>QA Engineer</button>
-        <button className='sysAdmin' data-cy='sysAdmin' onClick={e => handleJobButton('Systems Administrator')}>Systems Admin</button>
-        <button className='webDev' data-cy='webDev' onClick={e => handleJobButton('Web Developer')}>Web Developer</button>
+        <button className='filtBut dataAnalyst' data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
+        <button className='filtBut dataScientist' data-cy='dataScientist' onClick={e => handleJobButton('Data Scientist')}>Data Scientist</button>
+        <button className='filtBut mobileDev' data-cy='mobileDev' onClick={e => handleJobButton('Mobile Developer')}>Mobile Developer</button>
+        <button className='filtBut qaEngineer' data-cy='qaEngineer' onClick={e => handleJobButton('QA Engineer')}>QA Engineer</button>
+        <button className='filtBut sysAdmin' data-cy='sysAdmin' onClick={e => handleJobButton('Systems Administrator')}>Systems Admin</button>
+        <button className='filtBut webDev' data-cy='webDev' onClick={e => handleJobButton('Web Developer')}>Web Developer</button>
       </article>
       <article>
         <input

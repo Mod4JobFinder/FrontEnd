@@ -1,1 +1,13 @@
+.jobFilter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: .5rem;
+}
 
+.filtBut {
+  height: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #FFBE7B;
+}
