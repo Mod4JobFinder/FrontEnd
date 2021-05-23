@@ -33,7 +33,7 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
 
   return (
     <section>
-      <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle} in ${city}?`}</p>
+      <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle || 'your desired job'} in ${city || 'your city'}?`}</p>
       <article className='jobFilter' data-cy='jobFilter'>
         <button className='filtBut dataAnalyst' data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
         <button className='filtBut dataScientist' data-cy='dataScientist' onClick={e => handleJobButton('Data Scientist')}>Data Scientist</button>
