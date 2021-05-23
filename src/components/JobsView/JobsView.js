@@ -75,13 +75,13 @@ function JobsView() {
   return (
     <>
       <Header hidden={''}/>
-      <main className='jobViewLayout' data-cy='jobViewLayout'>
+      <main className='jobViewLayout' data-cy='jobViewLayout' style={color.pageBackGround}>
         {currentCity && <section className='formSec' data-cy='formSec'>
           <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
           <div className="formStyle">
             <article className='salList' data-cy='salHeader'>
             </article>
-            <article className='allSal'>
+            <article className='allSal' style={color.blueborder}>
               {buildSalDisplay}
             </article>
           </div>

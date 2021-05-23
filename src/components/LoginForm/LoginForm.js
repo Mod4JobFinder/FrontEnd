@@ -67,7 +67,7 @@ function LoginForm() {
           />
         </article>
         <article className='submitBox'>
-          <button onClick={handleLogin} className='loginButton' data-cy='loginButton'>Login!</button>
+          <button onClick={handleLogin} className='loginButton' style={color.orange} data-cy='loginButton'>Login!</button>
           <Link to={'/NewUser'} className='newUserButton' data-cy='newUserButton'>New User?</Link>
         </article>
       </div>
