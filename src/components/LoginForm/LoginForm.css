@@ -18,6 +18,8 @@
 
 .login-input {
   margin: 25px;
+  height: 25px;
+  border-radius: 10px;
 }
 
 .submitBox {
@@ -28,11 +30,12 @@
 
 .loginButton {
   background-color: #FFBE7B;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 40px;
   width: 125px;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* Utility classes */
