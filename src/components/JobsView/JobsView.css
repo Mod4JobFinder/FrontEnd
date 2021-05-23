@@ -13,13 +13,26 @@
   justify-content: space-around;
 }
 
+.citySal {
+  text-align: center;
+}
+
+.allSal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  border: 5px solid #B9FFFD;
+  border-radius: 10px;
+}
+
 .salList {
   display: flex;
   width: 80vw;
 }
 
 .salItem {
-  width: 15vw;
+  width: 100%;
+  text-align: center;
 }
 
 .salTitle {
