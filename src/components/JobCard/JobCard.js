@@ -4,7 +4,6 @@ import './JobCard.css';
 
 function JobCard({ jobTitle, company, location, date, handleYesJob, id, updateList }) {
   const { color } = useContext(ThemeContext)
-
   return (
     <article className='jobCard' style={color.blueborder} data-cy='jobCard'>
       <button onClick={e => handleYesJob(e)} id={id} className="yes" style={color.green}>Yes</button>
