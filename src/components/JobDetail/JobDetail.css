@@ -3,11 +3,25 @@
   justify-content: space-around;
 }
 
-.detUrl, .deleteJobButton {
+.deleteJobButton {
   height: 35px;
   width: 125px;
   cursor: pointer;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
+}
+
+.detUrl {
+  text-align: center;
+  border-radius: 10px;
+  border-top: 2px solid #767676;
+  border-left: 2px solid #767676;
+  border-right: 2px solid #212121;
+  border-bottom: 2px solid #212121;
+  height: 27px;
+  width: 121px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-top: 5px;
 }
