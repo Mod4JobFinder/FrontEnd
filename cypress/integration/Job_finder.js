@@ -3,6 +3,7 @@ context('Job_finder', () => {
   it('When vistiting the page you should start on a login page with a header and login feild', () => {
     cy.stubbedInercepts()
     .get('[data-cy=headerLayout]').should('exist')
+    .get('[data-cy=userlink]').should("not.be.visible")
     .get('[data-cy=mode]').click()
     .get('[data-cy=appTitle]').contains('Job Finder!')
     .get('[data-cy=loginForm]').should('exist')
@@ -11,16 +12,24 @@ context('Job_finder', () => {
   it('The landing view should be able to login an existing user', () => {
     cy.stubbedInercepts()
     .get('[data-cy=loginForm]').should('exist')
+    .url().should("eq", "http://localhost:3000/")
     .get('[data-cy=email]').type('AmieDog@gmail.com').should('have.value', 'AmieDog@gmail.com')
     .get('[data-cy=password]').type('Amie123456').should('have.value', 'Amie123456')
     .get('[data-cy=loginButton]').click()
     .get('[data-cy=jobViewLayout]').should('exist')
+    .url().should("eq", "http://localhost:3000/JobsView")
+    .get('[data-cy=userlink]').contains('User Saved')
   })
 
-  it('The landing view should be able to sign up a new user', () => {
+  it('The landing view should be able to sign up a new user or return to the login screen', () => {
     cy.stubbedInercepts()
     .get('[data-cy=loginForm]').should('exist')
     .get('[data-cy=newUserButton]').click()
+    .get('[data-cy=newUserFormLayout]').should('exist')
+    .get('[data-cy=backToLogin]').click()
+    .get('[data-cy=loginForm]').should('exist')
+    .get('[data-cy=newUserButton]').click()
+    .url().should("eq", "http://localhost:3000/NewUser")
     .get('[data-cy=newUserFormLayout]').should('exist')
     .get('[data-cy=firstName]').type('Amie').should('have.value', 'Amie')
     .get('[data-cy=lastName]').type('Dog').should('have.value', 'Dog')
@@ -56,6 +65,7 @@ context('Job_finder', () => {
     .get('[data-cy=searchCommit]').contains('Search for Web Developer in denver?')
     .get('[data-cy=submitSearch]').click()
     .get('[data-cy=jobCard]').should('exist')
+    .get('[data-cy=jobCard]').should("have.length", 10)
     .get('[data-cy=userlink]').click()
     .get('[data-cy=userView]').should('exist')
   })
@@ -67,12 +77,11 @@ context('Job_finder', () => {
     .get('[data-cy=password]').type('Amie123456').should('have.value', 'Amie123456')
     .get('[data-cy=loginButton]').click()
     .get('[data-cy=userlink]').click()
+    .url().should("eq", "http://localhost:3000/UserView")
     .get('[data-cy=userView]').should('exist')
     .get('[data-cy=headerLayout]').should('exist')
     .get('[data-cy=savedCard]').first().click()
     .get('[data-cy=jobDetailLayout]').should('exist')
   })
-
-
 
 })

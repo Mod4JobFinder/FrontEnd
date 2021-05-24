@@ -31,7 +31,7 @@ Cypress.Commands.add('stubGetSalary', () => {
 })
 
 Cypress.Commands.add('stubGetJobs', () => {
-  cy.intercept('https://findjob-backend.herokuapp.com/api/v1/jobs?city=denver&title=web%20developer', {fixture:'MockJobListData.js'})
+  cy.intercept('https://findjob-backend.herokuapp.com/api/v1/jobs?city=denver&title=Web%20Developer', {fixture:'MockJobListData.js'})
 })
 
 
