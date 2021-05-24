@@ -81,8 +81,7 @@ function JobsView() {
         {currentCity && <section className='formSec' data-cy='formSec'>
           <h1 className='citySal' data-cy='citySal'>{`Current search is for ${currentCity}.`}</h1>
           <div className="formStyle">
-            <article className='salList' data-cy='salHeader'>
-            </article>
+            <article className='allSal' data-cy='salHeader' style={color.blueborder}>
               {currentSalaries}
             </article>
           </div>
