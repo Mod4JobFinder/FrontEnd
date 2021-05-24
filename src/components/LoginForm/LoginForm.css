@@ -52,6 +52,15 @@
   border-bottom: 2px solid #212121;
 }
 
+.login-input {
+  margin: 25px;
+}
+
+.submitBox {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* Utility classes */
 .light {
   background: #3B27BA;
