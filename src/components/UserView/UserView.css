@@ -18,7 +18,7 @@
 }
 
 .jobDetailLayout {
-  height: 88vh;
+  height: 90vh;
   grid-area: desc;
   overflow: scroll;
 }
