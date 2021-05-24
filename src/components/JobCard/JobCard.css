@@ -1,0 +1,56 @@
+.jobCard {
+  border-radius: 10px;
+  border: 5px solid #B9FFFD;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr .25fr .25fr .25fr;
+  grid-template-areas:
+    "title title"
+    "company company"
+    "location date"
+    "yes no";
+  margin: 1rem;
+}
+
+.jobTitle {
+  justify-self: center;
+  vertical-align: middle;
+  grid-area: title;
+}
+
+.company {
+  justify-self: center;
+  grid-area: company;
+  border-radius: 10px;
+  padding: 2.5px;
+  border: 2.5px solid #B9FFFD;
+  font-weight: bold;
+}
+
+.location {
+  justify-self: center;
+  grid-area: location;
+}
+
+.date {
+  justify-self: center;
+  grid-area: date;
+}
+
+.yes {
+  background-color: #01FFC3;
+  grid-area: yes;
+}
+
+.no {
+  background-color: #FFB3FD;
+  grid-area: no;
+}
+
+.yes, .no {
+  width: 50%;
+  justify-self: center;
+  height: 35px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}

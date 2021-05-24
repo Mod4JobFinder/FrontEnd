@@ -8,6 +8,15 @@
   padding: 0;
 }
 
+.mode {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+
 .LeftButtonBox {
   width: 33vw;
   display: flex;
@@ -27,6 +36,24 @@
 
 .appTitle {
   font-size: 3em;
+  cursor: default;
+}
+
+.userlink {
+  box-sizing: border-box;
+  margin-top: 7vh;
+  border-radius: 10px 10px 0 0;
+  height: 3vh;
+  border-top: 2px solid #767676;
+  border-left: 2px solid #767676;
+  border-right: 2px solid #212121;
+  padding: 2px 2px 0 2px;
+}
+
+.userlink:hover {
+  margin-top: 6vh;
+  height: 4vh;
+  padding-top: 5px;
 }
 
 /* Utility classes */

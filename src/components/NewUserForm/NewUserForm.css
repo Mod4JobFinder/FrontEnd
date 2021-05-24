@@ -6,6 +6,54 @@
   width: 100vw;
 }
 
+.newUserFormLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+}
+
+.newUser {
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  padding: 25px;
+  border-radius: 10px 10px 0 0;
+}
+
+.a {
+  width: 35vw;
+  padding: 25px;
+}
+
+.lii {
+  margin: 5px 0 5px 0;
+}
+
+.newUserSub {
+  border-radius: 10px;
+  height: 40px;
+  width: 125px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.returnToLogin {
+  text-align: center;
+  border-radius: 10px;
+  border-top: 2px solid #767676;
+  border-left: 2px solid #767676;
+  border-right: 2px solid #212121;
+  border-bottom: 2px solid #212121;
+  height: 28px;
+  width: 121px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-top: 7px;
+}
+
 /* Utility classes */
 .light {
   background: #3B27BA;

@@ -33,19 +33,19 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
 
   return (
     <section>
-      <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle} in ${city}?`}</p>
+      <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle || 'your desired job'} in ${city || 'your city'}?`}</p>
       <article className='jobFilter' data-cy='jobFilter'>
-        <button className='dataAnalyst' data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
-        <button className='dataScientist' data-cy='dataScientist' onClick={e => handleJobButton('Data Scientist')}>Data Scientist</button>
-        <button className='mobileDev' data-cy='mobileDev' onClick={e => handleJobButton('Mobile Developer')}>Mobile Developer</button>
-        <button className='qaEngineer' data-cy='qaEngineer' onClick={e => handleJobButton('QA Engineer')}>QA Engineer</button>
-        <button className='sysAdmin' data-cy='sysAdmin' onClick={e => handleJobButton('Systems Administrator')}>Systems Admin</button>
-        <button className='webDev' data-cy='webDev' onClick={e => handleJobButton('Web Developer')}>Web Developer</button>
+        <button className='filtBut dataAnalyst' style={color.orange} data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
+        <button className='filtBut dataScientist' style={color.orange} data-cy='dataScientist' onClick={e => handleJobButton('Data Scientist')}>Data Scientist</button>
+        <button className='filtBut mobileDev' style={color.orange} data-cy='mobileDev' onClick={e => handleJobButton('Mobile Developer')}>Mobile Developer</button>
+        <button className='filtBut qaEngineer' style={color.orange} data-cy='qaEngineer' onClick={e => handleJobButton('QA Engineer')}>QA Engineer</button>
+        <button className='filtBut sysAdmin' style={color.orange} data-cy='sysAdmin' onClick={e => handleJobButton('Systems Administrator')}>Systems Admin</button>
+        <button className='filtBut webDev' style={color.orange} data-cy='webDev' onClick={e => handleJobButton('Web Developer')}>Web Developer</button>
       </article>
-      <article>
+      <article className='searchBar'>
         <input
           data-cy='cityInput'
-          className='cityInput'
+          className='sb cityInput'
           name='city'
           value={city}
           onChange={event => setCity(event.target.value)}
@@ -53,8 +53,8 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
           aria-label='city to search'
           placeholder='City'
         />
-        <button className='submitSearch' data-cy='submitSearch' onClick={handleSubmitSearch}>Submit</button>
-        <button className='clearSearch' data-cy='clearSearch' onClick={clearSearch}>Clear Search</button>
+        <button className='sb submitSearch' style={color.green} data-cy='submitSearch' onClick={handleSubmitSearch}>Submit</button>
+        <button className='sb clearSearch' style={color.pink} data-cy='clearSearch' onClick={clearSearch}>Clear Search</button>
       </article>
     </section>
   )

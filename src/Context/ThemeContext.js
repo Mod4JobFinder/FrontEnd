@@ -24,6 +24,18 @@ export const ThemeContextProvider = (props) => {
       pageBackGround: {
         backgroundColor: '#FFFFFF',
         color: '#000000',
+      },
+      blueborder: {
+        borderColor: '#3B27BA',
+      },
+      pinkborder: {
+        borderColor: '#E847AE',
+      },
+      greenborder: {
+        borderColor: '#13CA91',
+      },
+      orangeborder: {
+        borderColor: '#FF9472',
       }
     }
 
@@ -47,6 +59,18 @@ export const ThemeContextProvider = (props) => {
       pageBackGround: {
         backgroundColor: '#000000',
         color: '#FFFFFF',
+      },
+      blueborder: {
+        borderColor: '#B9FFFD',
+      },
+      pinkborder: {
+        borderColor: '#FFB3FD',
+      },
+      greenborder: {
+        borderColor: '#01FFC3',
+      },
+      orangeborder: {
+        borderColor: '#FFBE7B',
       }
     }
 

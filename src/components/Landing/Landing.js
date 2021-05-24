@@ -8,7 +8,7 @@ function Landing() {
   const { color } = useContext(ThemeContext)
 
   return (
-    <main className={`LandingLayout ${color}`}>
+    <main className={`LandingLayout ${color}`} style={color.pageBackGround}>
       <Header hidden={'hidden'}/>
       <LoginForm />
     </main>

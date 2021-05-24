@@ -1,0 +1,29 @@
+.savedCard {
+  border:4px solid #FFBE7B;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+  padding: 0;
+}
+
+.bd {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.bd:hover {
+  transition: background-color 1s ease;
+  background-color: #c2bfbf;
+}
+
+.savTitle {
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.savCompany {
+  font-weight: bold;
+}
