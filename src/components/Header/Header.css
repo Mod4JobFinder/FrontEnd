@@ -8,6 +8,14 @@
   padding: 0;
 }
 
+.mode {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-size: 25px;
+
+}
+
 .LeftButtonBox {
   width: 33vw;
   display: flex;
