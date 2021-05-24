@@ -16,26 +16,28 @@ function JobsView() {
 
   useEffect(() => {
     setCurrentCity(currentUser.city)
-    getSalary(currentUser.city)
-    .then(data =>  handleUpdateSalaries(data))
-    .catch(err => console.log(err))
   }, [currentUser]);
 
+  useEffect(() => {
+    getSalary(currentCity)
+    .then(data =>  handleUpdateSalaries(data))
+    .catch(err => console.log(err))
+  }, [currentCity])
+
   const handleUpdateSalaries = (data) => {
-    const salaries = data.data
-    setCurrentSalaries(salaries);
+    const salariesList = data.data.map(job => {
+      return (
+        <div className='salItem' key={job.id}>
+          <h1 className='salTitle'>{job.attributes.title}</h1>
+          <p className='range' data-cy='range'>{`${job.attributes.min_salary} to ${job.attributes.max_salary}`}</p>
+        </div>
+      )
+    })
+    setCurrentSalaries(salariesList);
   }
 
-  const buildSalDisplay = currentSalaries.map(job => {
-    return (
-      <div className='salItem' key={job.id}>
-        <h1 className='salTitle'>{job.attributes.title}</h1>
-        <p className='range' data-cy='range'>{`${job.attributes.min_salary} - ${job.attributes.max_salary}`}</p>
-      </div>
-    )
-  })
-
   const updataSearchedJobs = (searchCity, job) => {
+    console.log(searchCity)
     setCurrentCity(searchCity)
     getJobs(searchCity, job)
     .then(data => setJobsList(data.data))
@@ -81,8 +83,7 @@ function JobsView() {
           <div className="formStyle">
             <article className='salList' data-cy='salHeader'>
             </article>
-            <article className='allSal' style={color.blueborder}>
-              {buildSalDisplay}
+              {currentSalaries}
             </article>
           </div>
           <SearchForm userCity={currentCity} updataSearchedJobs={updataSearchedJobs}/>
