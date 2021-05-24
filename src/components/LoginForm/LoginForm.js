@@ -44,7 +44,7 @@ function LoginForm() {
   return (
     <section className='mainLayout'>
       <div className='loginFormLayout'>
-        <article className='loginForm' data-cy='loginForm'>
+        <article className='loginForm' style={color.blue} data-cy='loginForm'>
           <input
             data-cy='email'
             className='login-input'
@@ -66,9 +66,9 @@ function LoginForm() {
             placeholder='User Password'
           />
         </article>
-        <article className='submitBox'>
+        <article className='submitBox' style={color.blue}>
           <button onClick={handleLogin} className='loginButton' style={color.orange} data-cy='loginButton'>Login!</button>
-          <Link to={'/NewUser'} className='newUserButton' data-cy='newUserButton'>New User?</Link>
+          <Link to={'/NewUser'} className='newUserButton' style={color.pink} data-cy='newUserButton'>New User?</Link>
         </article>
       </div>
     </section>
