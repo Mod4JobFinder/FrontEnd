@@ -42,3 +42,35 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 580px) {
+  .jobFilter {
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    margin: 2.5vw;
+  }
+
+  .citySal {
+
+  }
+
+  .filtBut {
+    height: 35px;
+  }
+
+  .searchBar {
+    flex-wrap: wrap;
+  }
+
+  .sb {
+    height: 35px;
+    width: 45%;
+  }
+
+  .cityInput {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+}
