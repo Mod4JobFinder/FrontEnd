@@ -54,6 +54,12 @@
   padding-top: 7px;
 }
 
+.afr {
+  font-size: 12.5px;
+  text-align: right;
+  margin-top: 0;
+}
+
 /* Utility classes */
 .light {
   background: #3B27BA;

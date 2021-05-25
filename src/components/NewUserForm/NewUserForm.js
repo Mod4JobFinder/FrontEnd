@@ -17,6 +17,7 @@ function NewUserForm() {
   const [zipcode, setZipcode] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmitNew = (e) => {
     const  user = {
@@ -33,13 +34,18 @@ function NewUserForm() {
       postNewUser(user)
       .then(data => loginCheck(data))
       .catch(err => console.log(err))
-    } else {
+    } else if (password === passwordConfirmation && password.length < 8) {
+      setError('Password needs to be 8 characters long.')
       return 'Password need to be 8 characters long.'
+    } else if (password !== passwordConfirmation) {
+      setError('Passwords do not match.')
+      return
     }
   }
 
   const loginCheck = (user) => {
     if (user.error === 'invalid parameters') {
+      setError('It seems a field was missed. Please check that all forms are filled out and try again.')
       clearUserForm();
       return
     } else {
@@ -49,12 +55,6 @@ function NewUserForm() {
   }
 
   const clearUserForm = () => {
-    setFirstName('');
-    setLastName('');
-    setCity('');
-    setState('');
-    setZipcode('');
-    setEmail('');
     setPassword('');
     setPasswordConfirmation('');
   }
@@ -62,6 +62,7 @@ function NewUserForm() {
   return (
     <section className='newUserFormLayout' style={color.pageBackGround} data-cy='newUserFormLayout'>
         <article className='newUser' style={color.blue}>
+          <p className='afr'>All fields required</p>
           <input
             data-cy='firstName'
             className='firstName lii'
@@ -128,7 +129,7 @@ function NewUserForm() {
             name='password'
             value={password}
             onChange={event => setPassword(event.target.value)}
-            type='text'
+            type='password'
             aria-label='Input password'
             placeholder='Password'
           />
@@ -138,10 +139,11 @@ function NewUserForm() {
             name='passwordConfirmation'
             value={passwordConfirmation}
             onChange={event => setPasswordConfirmation(event.target.value)}
-            type='text'
+            type='password'
             aria-label='Input password confirmation'
             placeholder='Password Confirmation'
           />
+          <div className='errorMsg'> {error && `${error}`}</div>
         </article>
         <article className='submitBox a' style={color.blue}>
           <Link to={'/'} style={color.pink} className='returnToLogin' data-cy='returnToLogin'>Back To Login</Link>

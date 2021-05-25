@@ -19,7 +19,7 @@ function LoginForm() {
       "password": password
     }
     if (!email) {
-      setError('Please enter a username and try again.')
+      setError('Please enter an email and try again.')
       errorTimeout(4000)
     } else if (password) {
       postSession(user)
@@ -49,11 +49,6 @@ function LoginForm() {
       setError('')
     }, time);
   }
-
-  // const clearSessionForm = () => {
-  //   setEmail('');
-  //   setPassword('');
-  // }
 
   return (
     <section className='mainLayout'>
