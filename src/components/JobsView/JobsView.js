@@ -37,7 +37,6 @@ function JobsView() {
   }
 
   const updataSearchedJobs = (searchCity, job) => {
-    console.log(searchCity)
     setCurrentCity(searchCity)
     getJobs(searchCity, job)
     .then(data => setJobsList(data.data))
