@@ -39,6 +39,7 @@ function LoginForm() {
       setPassword('');
       return
     } else {
+      //loading message
       handleGoodLogin(user.data.attributes)
       history.push('/JobsView');
     }
