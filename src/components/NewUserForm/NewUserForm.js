@@ -144,7 +144,7 @@ function NewUserForm() {
           />
         </article>
         <article className='submitBox a' style={color.blue}>
-          <Link to={'/'} style={color.pink} className='returnToLogin'>Back To Login</Link>
+          <Link to={'/'} style={color.pink} className='returnToLogin' data-cy='returnToLogin'>Back To Login</Link>
             <button onClick={handleSubmitNew} className='newUserSub' style={color.green} data-cy='newUserSub'>Submit New User</button>
         </article>
     </section>
