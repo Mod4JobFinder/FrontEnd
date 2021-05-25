@@ -22,3 +22,28 @@
   grid-area: desc;
   overflow: scroll;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 580px) {
+  .userView {
+    grid-template-columns: auto;
+    grid-template-rows: 27vh auto;
+    grid-template-areas:
+      "cards"
+      "desc";
+  }
+
+  .saveCardsLayout {
+    grid-gap: 10px;
+    grid-template-columns: 10px;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(50% - var(--gutter) * 2);
+  }
+
+  .saveCardsLayout:before,
+  .saveCardsLayout:after {
+    content: '';
+    width: 10px;
+  }
+
+}
