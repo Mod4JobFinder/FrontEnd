@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
+import cityData from '../../cityData.js'
 import './SearchForm.css';
 
 function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
   const { color } = useContext(ThemeContext)
   const [city, setCity] = useState('');
-  const [jobTitle, setJobTitle]= useState('');
+  const [jobTitle, setJobTitle] = useState('');
+  const [cityError, setCityError] = useState(false);
+  const [jobError, setJobError] = useState(false)
 
   const handleJobButton = (job) => {
     if (job === jobTitle) {
@@ -20,19 +23,34 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
     setCity('');
   }
 
-  const handleSubmitSearch = () => {
-    if (!jobTitle) {
-      return
-    }
-    else if (!city) {
-      updataSearchedJobs(userCity, jobTitle);
+  const formatCity = () => {
+    let cityToCheck = '';
+    if(!city) {
+      cityToCheck = userCity
     } else {
-      updataSearchedJobs(city, jobTitle);
+      cityToCheck = city
+    }
+    const cityLower = cityToCheck.toLowerCase();
+    const cityNoSpaces = cityLower.split(' ').join('');
+    const cityChecked = cityData.find(city => city === cityNoSpaces)
+    return cityChecked;
+  }
+
+  const handleSubmitSearch = () => {
+    const cityChecked = formatCity()
+    if (!jobTitle) {
+      setJobError(true)
+      return
+    } else if (cityChecked === undefined) {
+      setCityError(true)
+      return
+    } else {
+      updataSearchedJobs(cityChecked, jobTitle);
     }
   }
 
   return (
-    <section>
+    <section> 
       <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle || 'your desired job'} in ${city || 'your city'}?`}</p>
       <article className='jobFilter' data-cy='jobFilter'>
         <button className='filtBut dataAnalyst' style={color.orange} data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
