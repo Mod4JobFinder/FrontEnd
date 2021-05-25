@@ -54,3 +54,16 @@
   border-radius: 10px;
   margin-bottom: 15px;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 580px) {
+  .yes, .no {
+    width: 90%;
+  }
+
+  .jobCard {
+    grid-template-rows: .5fr .25fr .25fr .25fr;
+    height: 40vh;
+  }
+
+}

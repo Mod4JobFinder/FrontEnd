@@ -18,13 +18,13 @@
 .newUser {
   display: flex;
   flex-direction: column;
-  width: 35vw;
+  width: 40vw;
   padding: 25px;
   border-radius: 10px 10px 0 0;
 }
 
 .a {
-  width: 35vw;
+  width: 40vw;
   padding: 25px;
 }
 
@@ -68,4 +68,14 @@
 
 .hidden {
   display: none;
+}
+
+@media only screen and (max-width: 580px) {
+  .newUser, .a {
+    width: 80vw;
+  }
+
+  .lii {
+    height: 25px;
+  }
 }

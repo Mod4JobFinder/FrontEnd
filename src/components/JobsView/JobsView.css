@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vw;
+  height: 100vh;
   width: 100vw;
   overflow: scroll;
 }
@@ -19,6 +19,7 @@
 .citySal {
   text-align: center;
   cursor: default;
+  width: 100vw;
 }
 
 .allSal {
@@ -46,4 +47,18 @@
 
 .range {
   font-size: .75em
+}
+
+/* Mobile View */
+@media only screen and (max-width: 580px) {
+  .allSal {
+    grid-template-columns: 1fr 1fr;
+    width: 95vw;
+    margin: 2.5vw;
+  }
+
+  .citySal {
+    width: auto;
+  }
+
 }

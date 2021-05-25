@@ -71,3 +71,15 @@
 .hidden {
   display: none;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 580px) {
+  .appTitle {
+    font-size: 2em;
+  }
+
+  .userlink {
+    height: 3vh;
+  }
+
+}
