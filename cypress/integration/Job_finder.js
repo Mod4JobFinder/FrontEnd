@@ -26,7 +26,7 @@ context('Job_finder', () => {
     .get('[data-cy=loginForm]').should('exist')
     .get('[data-cy=newUserButton]').click()
     .get('[data-cy=newUserFormLayout]').should('exist')
-    .get('[data-cy=backToLogin]').click()
+    .get('[data-cy=returnToLogin]').click()
     .get('[data-cy=loginForm]').should('exist')
     .get('[data-cy=newUserButton]').click()
     .url().should("eq", "http://localhost:3000/NewUser")
