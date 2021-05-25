@@ -11,24 +11,32 @@ function LoginForm() {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = () => {
     const user = {
       "email": email,
       "password": password
     }
-    if (password.length >= 8) {
+    if (!email) {
+      setError('Please enter a username and try again.')
+      errorTimeout(4000)
+    } else if (password) {
       postSession(user)
       .then(data => loginCheck(data))
       .catch(err => console.log(err))
     } else {
+      setError('Please enter a password and try again.')
+      errorTimeout(4000)
       return 'Invalid password.'
     }
   }
 
   const loginCheck = (user) => {
     if (user.error === 'invalid parameters') {
-      clearSessionForm ();
+      setError('Invalid login information, please take a second look and try again.');
+      errorTimeout(4000);
+      setPassword('');
       return
     } else {
       handleGoodLogin(user.data.attributes)
@@ -36,10 +44,16 @@ function LoginForm() {
     }
   }
 
-  const clearSessionForm = () => {
-    setEmail('');
-    setPassword('');
+  const errorTimeout = (time) => {
+    window.setTimeout(function() {
+      setError('')
+    }, time);
   }
+
+  // const clearSessionForm = () => {
+  //   setEmail('');
+  //   setPassword('');
+  // }
 
   return (
     <section className='mainLayout'>
@@ -65,6 +79,7 @@ function LoginForm() {
             aria-label='user password input'
             placeholder='User Password'
           />
+          <div className='errorMsg'> {error && `${error}`}</div>
         </article>
         <article className='submitBox' style={color.blue}>
           <button onClick={handleLogin} className='loginButton' style={color.orange} data-cy='loginButton'>Login!</button>

@@ -52,6 +52,12 @@
   border-bottom: 2px solid #212121;
 }
 
+.errorMsg {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
 /* Utility classes */
 .light {
   background: #3B27BA;
