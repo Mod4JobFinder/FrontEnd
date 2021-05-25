@@ -67,3 +67,14 @@
 .hidden {
   display: none;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 580px) {
+  .loginButton, .newUserButton {
+    width: 45%;
+  }
+
+  .loginForm, .submitBox {
+    width: 90vw;
+  }
+}
