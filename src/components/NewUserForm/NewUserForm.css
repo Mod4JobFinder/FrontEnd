@@ -69,3 +69,13 @@
 .hidden {
   display: none;
 }
+
+@media only screen and (max-width: 580px) {
+  .newUser, .a {
+    width: 80vw;
+  }
+
+  .lii {
+    height: 25px;
+  }
+}
