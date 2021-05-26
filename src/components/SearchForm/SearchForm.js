@@ -3,12 +3,10 @@ import { ThemeContext } from '../../Context/ThemeContext';
 import cityData from '../../cityData.js'
 import './SearchForm.css';
 
-function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
-  const { color } = useContext(ThemeContext)
+function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setError, error }) {
+  const { color } = useContext(ThemeContext);
   const [city, setCity] = useState('');
   const [jobTitle, setJobTitle] = useState('');
-  const [cityError, setCityError] = useState(false);
-  const [jobError, setJobError] = useState(false)
 
   const handleJobButton = (job) => {
     if (job === jobTitle) {
@@ -39,18 +37,26 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
   const handleSubmitSearch = () => {
     const cityChecked = formatCity()
     if (!jobTitle) {
-      setJobError(true)
+      setError('Please select a job title.')
+      errorTimeout(4000)
       return
     } else if (cityChecked === undefined) {
-      setCityError(true)
+      setError('City not on file please try a larger cith in your area.')
+      errorTimeout(4000)
       return
     } else {
       updataSearchedJobs(cityChecked, jobTitle);
     }
   }
 
+  const errorTimeout = (time) => {
+    window.setTimeout(function() {
+      setError('')
+    }, time);
+  }
+
   return (
-    <section> 
+    <section>
       <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle || 'your desired job'} in ${city || 'your city'}?`}</p>
       <article className='jobFilter' data-cy='jobFilter'>
         <button className='filtBut dataAnalyst' style={color.orange} data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
@@ -74,6 +80,7 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries }) {
         <button className='sb submitSearch' style={color.green} data-cy='submitSearch' onClick={handleSubmitSearch}>Submit</button>
         <button className='sb clearSearch' style={color.pink} data-cy='clearSearch' onClick={clearSearch}>Clear Search</button>
       </article>
+      <div className='errorMsg'> {error && `${error}`}</div>
     </section>
   )
 }
