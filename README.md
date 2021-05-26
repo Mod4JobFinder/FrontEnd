@@ -78,17 +78,17 @@ This application allows a new user create a profile and login. The user then can
 
 ## Functionality
 
-#### Login
-![Login Screen](http://www.giphy.com/gifs/um4BxNVkVa4Q0Kazoy)
+#### Login.
+![Login Screen](http://www.giphy.com/gifs/um4BxNVkVa4Q0Kazoy/giphy.gif)
 
-#### Search View
-![Search Functionality](http://www.giphy.com/gifs/jK5LWZ993RSdKAvVYz)
+#### Search View.
+![Search Functionality](http://www.giphy.com/gifs/jK5LWZ993RSdKAvVYz/giphy.gif)
 
-#### Jobs List
-![Jobs List](http://www.giphy.com/gifs/JfXU1IHczQfMk2mKnt)
+#### Jobs List.
+![Jobs List](http://www.giphy.com/gifs/JfXU1IHczQfMk2mKnt/giphy.gif)
 
-#### Detailed View
-![Jobs Details](http://www.giphy.com/gifs/bvI9xSflR6EJEEK0Wc)
+#### Detailed View.
+![Jobs Details](http://www.giphy.com/gifs/bvI9xSflR6EJEEK0Wc/giphy.gif)
 
 
 
