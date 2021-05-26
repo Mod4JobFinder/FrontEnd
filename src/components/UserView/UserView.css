@@ -27,7 +27,7 @@
 @media only screen and (max-width: 580px) {
   .userView {
     grid-template-columns: auto;
-    grid-template-rows: 27vh auto;
+    grid-template-rows: 37vh auto;
     grid-template-areas:
       "cards"
       "desc";

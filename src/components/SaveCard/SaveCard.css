@@ -30,7 +30,7 @@
 
 @media only screen and (max-width: 580px) {
   .savedCard {
-    height: 25vh;
+    height: 35vh;
     width: 60vw;
   }
 }

@@ -44,10 +44,12 @@
   margin-top: 7vh;
   border-radius: 10px 10px 0 0;
   height: 3vh;
+  width: 55px;
   border-top: 2px solid #767676;
   border-left: 2px solid #767676;
   border-right: 2px solid #212121;
   padding: 2px 2px 0 2px;
+  text-align: center;
 }
 
 .userlink:hover {
@@ -74,12 +76,16 @@
 
 /* Mobile View */
 @media only screen and (max-width: 580px) {
+  .headerLayout {
+    height: 12vh;
+  }
+
   .appTitle {
     font-size: 2em;
   }
 
   .userlink {
-    height: 3vh;
+    height: 5vh;
   }
 
 }
