@@ -44,3 +44,12 @@ Cypress.Commands.add('stubPostJobToUser', () => {
       }
     }, { fixture: 'MockUserData.js' })
 })
+
+Cypress.Commands.add('sadPathTesting', () => {
+  cy.intercept(`https://findjob-backend.herokuapp.com/api/v1/saved_jobs`, {
+      method: 'POST',
+      headers: {
+        "content-type": "application/json"
+      }
+    }, { error: 'invalid credentials' })
+})
