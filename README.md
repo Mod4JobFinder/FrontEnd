@@ -2,7 +2,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://github.com/Afoucheaux) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://www.linkedin.com/in/aaron-foucheaux-891626207/) - Aaron Foucheaux
 
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/connor-anderson-larson/) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://github.com/ConnorAndersonLarson) - Conner Anderson-Larson
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/connor-anderson-larson/) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://github.com/ConnorAndersonLarson) - Connor Anderson-Larson
 
 
 ## Table of Contents
@@ -20,7 +20,7 @@
 
 ## About The Project
 
-This application allows a new user create a profile and login. The user then can search and filter jobs based on City and position. Then they have the ability to save jobs and go to a user profile. In the user profile they are able view additional details about the jobs saved and link to apply. Project included:
+This application allows a new user create a profile and login. The user then can search and filter jobs based on city and position. Then they have the ability to save jobs and go to a user profile. In the user profile they are able to view additional details about the jobs saved and link to apply. Project included:
 
 - Utilize Context API and React hooks for global state.
 - Implement E2E test coverage of user flows using Cypress testing
@@ -47,7 +47,7 @@ This application allows a new user create a profile and login. The user then can
  visit deployed site [here](https://jobfinderfe.herokuapp.com/)
 
 1. Additionally you can clone down the repo [here](https://github.com/Mod4JobFinder/FrontEnd)
-2. Move into the rancid_tomatillos directory in your terminal.
+2. Move into the JobFinder directory in your terminal.
 3. To see the code itself locally, run `<name of text editor> .`
   - Run `npm install`
   - Run `npm start`
@@ -65,14 +65,14 @@ This application allows a new user create a profile and login. The user then can
 
 ## Challenges
 
-1. Dealing with outside adversity over the corse of the project. This left the front end team down to one member for ruffly half the projects time.
-2. Integrating CI with the Cypress testing
+1. Dealing with outside adversity over the curse of the project. This left the front end team down to one member for roughly half the projects time.
+2. Integrating CI with the Cypress testing.
 3. Initial planning to decide on MVP and core user flows.
 
 ## Wins
 
-1. Implementing the MVP wile dealing outside adversity.
-2. Utilizing Context Api for global state management and light dark mode.
+1. Implementing the MVP while dealing with outside adversity.
+2. Utilizing Context Api for global state management for light/dark mode.
 3. Partnership and better understanding of the back end team and their work.
 
 
@@ -102,4 +102,4 @@ This application allows a new user create a profile and login. The user then can
 ## Contributers
 
 * [Aaron Foucheaux](https://github.com/Afoucheaux) - Application FE Co-creator
-* [Conner Anderson-Larson](https://github.com/ConnorAndersonLarson) - Application FE Co-creator
+* [Connor Anderson-Larson](https://github.com/ConnorAndersonLarson) - Application FE Co-creator
