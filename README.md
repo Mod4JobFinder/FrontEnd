@@ -85,7 +85,7 @@ This application allows a new user create a profile and login. The user then can
 ![Search Functionality](https://media.giphy.com/media/jK5LWZ993RSdKAvVYz/giphy.gif)
 
 #### Jobs List.
-![Jobs List](https://media.giphy.com/media/jK5LWZ993RSdKAvVYz/giphy.gif)
+![Jobs List](https://media.giphy.com/media/JfXU1IHczQfMk2mKnt/giphy.gif)
 
 #### Detailed View.
 ![Jobs Details](https://media.giphy.com/media/bvI9xSflR6EJEEK0Wc/giphy.gif)
