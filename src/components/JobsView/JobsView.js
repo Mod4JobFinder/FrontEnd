@@ -14,6 +14,7 @@ function JobsView() {
   const [currentSalaries, setCurrentSalaries] = useState([]);
   const [currentCity, setCurrentCity] = useState('');
   const [error, setError] = useState(``);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setCurrentCity(currentUser.city)
@@ -40,7 +41,10 @@ function JobsView() {
   const updataSearchedJobs = (searchCity, job) => {
     setCurrentCity(searchCity)
     getJobs(searchCity, job)
-    .then(data => setJobsList(data.data))
+    .then(data => {
+      setLoading(false);
+      setJobsList(data.data);
+    })
     .catch(err => console.log(err))
   }
 
@@ -85,7 +89,7 @@ function JobsView() {
               {currentSalaries}
             </article>
           </div>
-          <SearchForm userCity={currentCity} updataSearchedJobs={updataSearchedJobs} setError={setError} error={error}/>
+          <SearchForm userCity={currentCity} updataSearchedJobs={updataSearchedJobs} setError={setError} error={error} setLoading={setLoading} loading={loading}/>
         </section>}
         {jobList && <section className='currentJobDisplaySection'>
           {buildJobsDisplay}

@@ -27,6 +27,10 @@
 }
 
 @media only screen and (max-width: 580px) {
+  .detailSec {
+    padding: 5px;
+  }
+
   .appDel {
     margin-bottom: 15px;
   }

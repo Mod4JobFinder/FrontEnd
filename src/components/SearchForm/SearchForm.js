@@ -3,7 +3,7 @@ import { ThemeContext } from '../../Context/ThemeContext';
 import cityData from '../../cityData.js'
 import './SearchForm.css';
 
-function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setError, error }) {
+function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setError, error, setLoading, loading }) {
   const { color } = useContext(ThemeContext);
   const [city, setCity] = useState('');
   const [jobTitle, setJobTitle] = useState('');
@@ -36,12 +36,15 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setErr
 
   const handleSubmitSearch = () => {
     const cityChecked = formatCity()
+    setLoading(true);
     if (!jobTitle) {
+      setLoading(false);
       setError('Please select a job title.')
       errorTimeout(4000)
       return
     } else if (cityChecked === undefined) {
-      setError('City not on file please try a larger cith in your area.')
+      setLoading(false);
+      setError('City not on file. Please try a larger city in your area.')
       errorTimeout(4000)
       return
     } else {
@@ -80,7 +83,7 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setErr
         <button className='sb submitSearch' style={color.green} data-cy='submitSearch' onClick={handleSubmitSearch}>Submit</button>
         <button className='sb clearSearch' style={color.pink} data-cy='clearSearch' onClick={clearSearch}>Clear Search</button>
       </article>
-      <div className='errorMsg'> {error && `${error}`}</div>
+      <div className='errorMsg'> {error && `${error}`} {loading && 'Loading...'}</div>
     </section>
   )
 }

@@ -63,7 +63,9 @@
 
   .jobCard {
     grid-template-rows: .5fr .25fr .25fr .25fr;
-    height: 40vh;
+    height: auto;
+    min-height: 40vh;
+    max-height: auto;
   }
 
 }

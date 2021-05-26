@@ -12,6 +12,7 @@ function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
     const user = {
@@ -22,6 +23,7 @@ function LoginForm() {
       setError('Please enter an email and try again.')
       errorTimeout(4000)
     } else if (password) {
+      setLoading(true);
       postSession(user)
       .then(data => loginCheck(data))
       .catch(err => console.log(err))
@@ -34,13 +36,14 @@ function LoginForm() {
 
   const loginCheck = (user) => {
     if (user.error === 'invalid parameters') {
+      setLoading(false);
       setError('Invalid login information, please take a second look and try again.');
       errorTimeout(4000);
       setPassword('');
       return
     } else {
-      //loading message
-      handleGoodLogin(user.data.attributes)
+      setLoading(false);
+      handleGoodLogin(user.data.attributes);
       history.push('/JobsView');
     }
   }
@@ -75,7 +78,7 @@ function LoginForm() {
             aria-label='user password input'
             placeholder='User Password'
           />
-          <div className='errorMsg'> {error && `${error}`}</div>
+          <div className='errorMsg'> {error && `${error}`} {loading && 'Loading...'}</div>
         </article>
         <article className='submitBox' style={color.blue}>
           <button onClick={handleLogin} className='loginButton' style={color.orange} data-cy='loginButton'>Login!</button>

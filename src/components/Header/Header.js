@@ -13,8 +13,8 @@ function Header( {hidden} ) {
         <h1 className='appTitle' data-cy='appTitle'>Job Finder!</h1>
       </article>
       <article className='rightHeaderButtons'>
-        <Link to={'/UserView'} className={`userlink ${hidden}`} style={color.orange} data-cy='userlink'>User Saved</Link>
-        <button className='hidden'>Compare</button>
+        <Link to={'/UserView'} className={`userlink u ${hidden}`} style={color.orange} data-cy='userlink'>User</Link>
+        <Link to={'/JobsView'} className={`userlink h ${hidden}`} style={color.orange} data-cy='homelink'>Home</Link>
       </article>
     </section>
   )
