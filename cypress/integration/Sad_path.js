@@ -21,5 +21,13 @@ context('Sad_path', () => {
         .get('[data-cy=messages]').should('contain', 'Please enter an email and try again.')
       })
 
+    it('A user should receive an error when they do not enter any information.', () => {
+      cy.sadPathTesting()
+        .get('[data-cy=email]').type('testtesttest@gmail.com')
+        .get('[data-cy=password]').type('badpass')
+        .get('[data-cy=loginButton]').click()
+        .get('[data-cy=messages]').should('contain', 'Invalid login information, please take a second look and try again.')
+      })
+
 
 })

@@ -51,5 +51,5 @@ Cypress.Commands.add('sadPathTesting', () => {
       headers: {
         "content-type": "application/json"
       }
-    }, { error: 'invalid credentials' })
+    }, { error: 'invalid parameters' })
 })
