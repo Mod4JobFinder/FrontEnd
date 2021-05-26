@@ -78,7 +78,7 @@ function LoginForm() {
             aria-label='user password input'
             placeholder='User Password'
           />
-          <div className='errorMsg'> {error && `${error}`} {loading && 'Loading...'}</div>
+          <div className='errorMsg' data-cy='messages'> {error && `${error}`} {loading && 'Loading...'}</div>
         </article>
         <article className='submitBox' style={color.blue}>
           <button onClick={handleLogin} className='loginButton' style={color.orange} data-cy='loginButton'>Login!</button>

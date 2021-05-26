@@ -83,7 +83,7 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setErr
         <button className='sb submitSearch' style={color.green} data-cy='submitSearch' onClick={handleSubmitSearch}>Submit</button>
         <button className='sb clearSearch' style={color.pink} data-cy='clearSearch' onClick={clearSearch}>Clear Search</button>
       </article>
-      <div className='errorMsg'> {error && `${error}`} {loading && 'Loading...'}</div>
+      <div className='errorMsg' data-cy="message"> {error && `${error}`} {loading && 'Loading...'}</div>
     </section>
   )
 }
