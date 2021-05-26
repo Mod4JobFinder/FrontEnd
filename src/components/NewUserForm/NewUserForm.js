@@ -143,7 +143,7 @@ function NewUserForm() {
             aria-label='Input password confirmation'
             placeholder='Password Confirmation'
           />
-          <div className='errorMsg'> {error && `${error}`}</div>
+          <div className='errorMsg' data-cy='message'> {error && `${error}`}</div>
         </article>
         <article className='submitBox a' style={color.blue}>
           <Link to={'/'} style={color.pink} className='returnToLogin' data-cy='returnToLogin'>Back To Login</Link>
