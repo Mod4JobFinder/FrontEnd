@@ -9,7 +9,7 @@ import {deleteJobFromUser} from '../../apiCalls.js';
 
 function UserView() {
   const {color} = useContext(ThemeContext);
-  const {currentUser , userSavedJobs, setUserSavedJobs, deleteJobUser} = useContext(UserContext);
+  const {userSavedJobs, deleteJobUser} = useContext(UserContext);
   const [detailJob, setDetailJob] = useState({});
   const [savJobList, setSavJobList] = useState([]);
 
