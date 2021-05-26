@@ -18,7 +18,29 @@ context('Job_finder', () => {
       .get('[data-cy=loginButton]').click()
       .get('[data-cy=jobViewLayout]').should('exist')
       .url().should("eq", "http://localhost:3000/JobsView")
-      .get('[data-cy=userlink]').contains('User Saved')
+      .get('[data-cy=userlink]').contains('User')
+      .get('[data-cy=homelink]').contains('Home')
+  })
+
+  it('A user should be able to switch views between saved jobs and searching once logged in.', () => {
+    cy.stubbedInercepts()
+      .get('[data-cy=loginForm]').should('exist')
+      .url().should("eq", "http://localhost:3000/")
+      .get('[data-cy=email]').type('AmieDog@gmail.com').should('have.value', 'AmieDog@gmail.com')
+      .get('[data-cy=password]').type('Amie123456').should('have.value', 'Amie123456')
+      .get('[data-cy=loginButton]').click()
+      .get('[data-cy=userlink]').click()
+      .url().should("eq", "http://localhost:3000/UserView")
+      .get('[data-cy=homelink]').click()
+      .url().should("eq", "http://localhost:3000/JobsView")
+  })
+
+  it('A user should not be able to switch views between saved jobs and searching before being logged in.', () => {
+    cy.stubbedInercepts()
+      .get('[data-cy=loginForm]').should('exist')
+      .url().should("eq", "http://localhost:3000/")
+      .get('[data-cy=userlink]').should('not.be.visible')
+      .get('[data-cy=homelink]').should('not.be.visible')
   })
 
   it('The landing view should be able to sign up a new user or return to the login screen', () => {

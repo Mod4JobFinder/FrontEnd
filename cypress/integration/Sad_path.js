@@ -58,7 +58,7 @@ context('Sad_path', () => {
         .get('[data-cy=message]').should('contain', 'It seems a field was missed. Please check that all forms are filled out and try again.')
       })
 
-      it('A user should receive an error message if password and confirmation do not match', () => {
+      it('A user should receive an error message if password and confirmation do not match.', () => {
         cy.sadPathTesting()
         cy.visit('http://localhost:3000')
           .get('[data-cy=newUserButton]').click()
@@ -72,5 +72,27 @@ context('Sad_path', () => {
           .get('[data-cy=newUserSub]').click()
           .get('[data-cy=message]').should('contain', 'Passwords do not match.')
         })
+
+      it('A user should get an error message if their city was not able to be found.', () => {
+        cy.stubbedInercepts()
+          .get('[data-cy=email]').type('AmieDog@gmail.com').should('have.value', 'AmieDog@gmail.com')
+          .get('[data-cy=password]').type('Amie123456').should('have.value', 'Amie123456')
+          .get('[data-cy=loginButton]').click()
+          .get('[data-cy=cityInput]').type('faketownUSA')
+          .get('[data-cy=webDev]').click()
+          .get('[data-cy=searchCommit]').contains('Search for Web Developer in faketownUSA?')
+          .get('[data-cy=submitSearch]').click()
+          .get('[data-cy=message]').should('contain', 'City not on file. Please try a larger city in your area.')
+      })
+
+      it('A user should get an error message if they do not choose a job title before searching.', () => {
+        cy.stubbedInercepts()
+          .get('[data-cy=email]').type('AmieDog@gmail.com').should('have.value', 'AmieDog@gmail.com')
+          .get('[data-cy=password]').type('Amie123456').should('have.value', 'Amie123456')
+          .get('[data-cy=loginButton]').click()
+          .get('[data-cy=cityInput]').type('faketownUSA')
+          .get('[data-cy=submitSearch]').click()
+          .get('[data-cy=message]').should('contain', 'Please select a job title.')
+      })
 
 })
