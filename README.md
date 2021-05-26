@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+## Contact  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://github.com/Afoucheaux) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://www.linkedin.com/in/aaron-foucheaux-891626207/) - Aaron Foucheaux
 
-## Available Scripts
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/connor-anderson-larson/) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://github.com/ConnorAndersonLarson) - Conner Anderson-Larson
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [About the Project](#about-the-project)
+- [Built With](#built-with)
+- [Set-up Instructions](#set-up-instructions)
+- [Learning Goals](#learning-goals)
+- [Challenges](#challenges)
+- [Wins](#wins)
+- [Functionality](#functionality)
+- [Future Iterations](#future-iterations)
+- [Contributors](#contributors)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application allows a new user create a profile and login. The user then can search and filter jobs based on City and position. Then they have the ability to save jobs and go to a user profile. In the user profile they are able view additional details about the jobs saved and link to apply. Project included:
 
-### `npm run build`
+- Utilize Context API and React hooks for global state.
+- Implement E2E test coverage of user flows using Cypress testing
+- Create a multi-page UX using Router
+- Deployment using Heroku
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Deployed app](https://jobfinderfe.herokuapp.com/)
+- [Project Brief and Rubric](https://mod4.turing.edu/projects/capstone.html)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Built With:
 
-### `npm run eject`
+- React w/hooks & Context API
+- React Router
+- Javascript
+- HTML5
+- CSS
+- Cypress
+- Heroku
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Set-up Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ visit deployed site [here](https://jobfinderfe.herokuapp.com/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Additionally you can clone down the repo [here](https://github.com/Mod4JobFinder/FrontEnd)
+2. Move into the rancid_tomatillos directory in your terminal.
+3. To see the code itself locally, run `<name of text editor> .`
+  - Run `npm install`
+  - Run `npm start`
+  - visit http://localhost:3000/
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Learning Goals
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Demonstration of React fundamentals including components, props, state, and JSX
+- E2E (end to end) testing using Cypress
+- Refactoring an application to utilize React Router
+- Utilize Context Api and React hooks for global state management
+- Rebase work flow using Git and Github.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Challenges
 
-### Analyzing the Bundle Size
+1. Dealing with outside adversity over the corse of the project. This left the front end team down to one member for ruffly half the projects time.
+2. Integrating CI with the Cypress testing
+3. Initial planning to decide on MVP and core user flows.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Wins
 
-### Making a Progressive Web App
+1. Implementing the MVP wile dealing outside adversity.
+2. Utilizing Context Api for global state management and light dark mode.
+3. Partnership and better understanding of the back end team and their work.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Functionality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Home and Movies View
+![Home and movies view](https://media.giphy.com/media/aitKojS2Tgzh2lIgM9/giphy.gif)
 
-### Deployment
+#### Search bar
+![Pantry and Cook View](https://media.giphy.com/media/nf3cgXfjJS9J7aPjQ3/giphy.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Movie Snap Shot
+![Search and Filter View](https://media.giphy.com/media/Bs4aPIEWSERpRAzen4/giphy.gif)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Future Iterations
+
+1. Retrofit TypeScript into the application.
+2. Map view of job salaries by region.
+3. Circle CI implementation.
+
+
+## Contributers
+
+* [Aaron Foucheaux](https://github.com/Afoucheaux) - Application FE Co-creator
+* [Conner Anderson-Larson](https://github.com/ConnorAndersonLarson) - Application FE Co-creator
