@@ -78,14 +78,17 @@ This application allows a new user create a profile and login. The user then can
 
 ## Functionality
 
-#### Home and Movies View
-![Home and movies view](https://media.giphy.com/media/aitKojS2Tgzh2lIgM9/giphy.gif)
+#### Login
+![Login Screen](http://www.giphy.com/gifs/um4BxNVkVa4Q0Kazoy)
 
-#### Search bar
-![Pantry and Cook View](https://media.giphy.com/media/nf3cgXfjJS9J7aPjQ3/giphy.gif)
+#### Search View
+![Search Functionality](http://www.giphy.com/gifs/jK5LWZ993RSdKAvVYz)
 
-#### Movie Snap Shot
-![Search and Filter View](https://media.giphy.com/media/Bs4aPIEWSERpRAzen4/giphy.gif)
+#### Jobs List
+![Jobs List](http://www.giphy.com/gifs/JfXU1IHczQfMk2mKnt)
+
+#### Detailed View
+![Jobs Details](http://www.giphy.com/gifs/bvI9xSflR6EJEEK0Wc)
 
 
 
