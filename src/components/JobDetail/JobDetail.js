@@ -21,10 +21,11 @@ function JobDetail( {title, company, location, description, url, deleteJob, id }
         <p className='detComp' data-cy='detComp'>{company}</p>
         <p className='detLocal' data-cy='detLocal'>{location}</p>
         <p className='detDesc' data-cy='detDesc'>{descSeg(description)}</p>
-        <div className='appDel'>
+        {!!description && <div className='appDel'>
           <a href={url} className='detUrl' style={color.green} data-cy='detUrl'>Apply Here</a>
           <button className='deleteJobButton' style={color.pink} data-cy='deleteJobButton' id={id} onClick={e => deleteJob(id)}>Delete Job</button>
-        </div>
+        </div>}
+        <div className='errorMsg' data-cy="message">{!description && 'Select a job from the cards to get started!'}</div>
       </div>
     </article>
   )
