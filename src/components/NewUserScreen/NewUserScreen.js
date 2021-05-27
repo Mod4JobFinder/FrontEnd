@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import NewUserForm from '../NewUserForm/NewUserForm.js';
 import './NewUserScreen.css';
 import Header from '../Header/Header.js';
