@@ -16,6 +16,7 @@
   justify-self: center;
   vertical-align: middle;
   grid-area: title;
+  padding: 0 5px 0 5px;
 }
 
 .company {
