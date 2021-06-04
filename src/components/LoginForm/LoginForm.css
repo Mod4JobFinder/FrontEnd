@@ -6,9 +6,6 @@
   width: 100vw;
 }
 
-.loginFormLayout {
-}
-
 .loginForm {
   display: flex;
   flex-direction: column;
