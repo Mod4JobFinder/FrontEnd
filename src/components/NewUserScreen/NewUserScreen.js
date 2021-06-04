@@ -1,6 +1,6 @@
 import React from 'react';
 import NewUserForm from '../NewUserForm/NewUserForm.js';
-import Header from '../Header/Header.js';
+import Header from '../Header/Header.tsx';
 
 function NewUserScreen() {
   return (

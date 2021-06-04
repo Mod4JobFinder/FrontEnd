@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import './JobsView.css';
 import {ThemeContext} from '../../Context/ThemeContext';
 import {UserContext} from '../../Context/UserContext';
-import Header from '../Header/Header.js';
+import Header from '../Header/Header.tsx';
 import SearchForm from '../SearchForm/SearchForm.js';
 import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
 import JobCard from '../JobCard/JobCard.js';

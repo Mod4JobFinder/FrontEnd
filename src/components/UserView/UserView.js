@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect }from 'react';
 import './UserView.css';
-import Header from '../Header/Header.js';
+import Header from '../Header/Header.tsx';
 import SaveCard from '../SaveCard/SaveCard.js';
 import JobDetail from '../JobDetail/JobDetail.js';
 import {ThemeContext} from '../../Context/ThemeContext';
