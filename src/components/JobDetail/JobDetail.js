@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext';
+import { ThemeContext } from '../../Context/ThemeContext.tsx';
 import './JobDetail.css';
 
 function JobDetail( {title, company, location, description, url, deleteJob, id } ) {

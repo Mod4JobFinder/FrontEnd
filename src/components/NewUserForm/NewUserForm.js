@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext';
+import { ThemeContext } from '../../Context/ThemeContext.tsx';
 import { UserContext } from '../../Context/UserContext';
 import { Link, useHistory } from 'react-router-dom';
 import { postNewUser } from '../../apiCalls.js';

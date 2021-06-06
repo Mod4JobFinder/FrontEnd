@@ -3,7 +3,7 @@ import './UserView.css';
 import Header from '../Header/Header.tsx';
 import SaveCard from '../SaveCard/SaveCard.js';
 import JobDetail from '../JobDetail/JobDetail.js';
-import {ThemeContext} from '../../Context/ThemeContext';
+import {ThemeContext} from '../../Context/ThemeContext.tsx';
 import {UserContext} from '../../Context/UserContext';
 import {deleteJobFromUser} from '../../apiCalls.js';
 
