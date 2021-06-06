@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {ThemeContext} from '../../Context/ThemeContext.tsx';
+import {ThemeContext} from '../../Context/ThemeContext.js';
 import './Header.css';
 import {Hidden} from '../../interface'
 

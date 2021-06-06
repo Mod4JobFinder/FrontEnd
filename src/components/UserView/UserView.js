@@ -2,8 +2,8 @@ import React, { useContext, useState, useEffect }from 'react';
 import './UserView.css';
 import Header from '../Header/Header.tsx';
 import SaveCard from '../SaveCard/SaveCard.js';
-import JobDetail from '../JobDetail/JobDetail.js';
-import {ThemeContext} from '../../Context/ThemeContext.tsx';
+import JobDetail from '../JobDetail/JobDetail.tsx';
+import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
 import {deleteJobFromUser} from '../../apiCalls.js';
 

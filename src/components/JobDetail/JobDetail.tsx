@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext.tsx';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import './JobDetail.css';
+import Details from '../../interface.ts'
 
-function JobDetail( {title, company, location, description, url, deleteJob, id } ) {
+const JobDetail: React.FC<Details> = ({title, company, location, description, url, deleteJob, id }): JSX.Element => {
   const { color } = useContext(ThemeContext)
 
-  const descSeg = description => {
+  const descSeg = (description: string): Element => {
     if (description) {
       const newDesc = description.split('<br>').map((segment, i) => {
       return <React.Fragment key={i.toString()}>{`${segment}`} <br /></React.Fragment>

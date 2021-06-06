@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext.tsx';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import cityData from '../../cityData.js'
 import './SearchForm.css';
 

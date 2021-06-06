@@ -4,7 +4,7 @@ import Landing from '../Landing/Landing.js';
 import JobsView from '../JobsView/JobsView.js';
 import UserView from '../UserView/UserView.js';
 import NewUserScreen from '../NewUserScreen/NewUserScreen.js';
-import {ThemeContextProvider} from '../../Context/ThemeContext.tsx';
+import {ThemeContextProvider} from '../../Context/ThemeContext.js';
 import {UserContextProvider} from '../../Context/UserContext';
 
 function App() {

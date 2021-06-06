@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext.tsx';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import './SaveCard.css';
 
 function SaveCard({ title,company , location, id, updateDetailJob }) {

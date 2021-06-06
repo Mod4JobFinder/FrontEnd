@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './JobsView.css';
-import {ThemeContext} from '../../Context/ThemeContext.tsx';
+import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
 import Header from '../Header/Header.tsx';
 import SearchForm from '../SearchForm/SearchForm.js';

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext.tsx';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import { UserContext } from '../../Context/UserContext';
 import { Link, useHistory } from 'react-router-dom';
 import { postSession } from '../../apiCalls.js';
