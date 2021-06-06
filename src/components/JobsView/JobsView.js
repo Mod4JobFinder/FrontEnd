@@ -5,7 +5,7 @@ import {UserContext} from '../../Context/UserContext';
 import Header from '../Header/Header.tsx';
 import SearchForm from '../SearchForm/SearchForm.js';
 import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
-import JobCard from '../JobCard/JobCard.js';
+import JobCard from '../JobCard/JobCard.tsx';
 
 function JobsView() {
   const {color} = useContext(ThemeContext);

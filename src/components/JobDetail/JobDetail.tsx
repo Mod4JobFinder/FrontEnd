@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext.js';
 import './JobDetail.css';
-import Details from '../../interface.ts'
+import Details from '../../interface.ts';
 
 const JobDetail: React.FC<Details> = ({title, company, location, description, url, deleteJob, id }): JSX.Element => {
   const { color } = useContext(ThemeContext)

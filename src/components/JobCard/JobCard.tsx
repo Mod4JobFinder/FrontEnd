@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext.js';
 import './JobCard.css';
+import CardDeatails from '../../interface.ts';
 
-function JobCard({ jobTitle, company, location, date, handleYesJob, id, updateList }) {
+const JobCard: React.FC<CardDetails> = ({ jobTitle, company, location, date, handleYesJob, id, updateList }): JSX.Element => {
   const { color } = useContext(ThemeContext)
   return (
     <article className='jobCard' style={color.blueborder} data-cy='jobCard'>

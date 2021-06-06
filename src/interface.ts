@@ -12,3 +12,13 @@ export interface Details {
   deleteJob: (id: number) => void,
   id: number
 }
+
+export interface CardDetails {
+  jobTitle: string,
+  company: string,
+  location: string,
+  date: string,
+  handleYesJob: (event: React.MouseEvent<HTMLInputElement>) => void,
+  id: number,
+  updateList: (event: React.MouseEvent<HTMLInputElement>) => void
+}
