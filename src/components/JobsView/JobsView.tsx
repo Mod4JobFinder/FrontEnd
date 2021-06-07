@@ -7,7 +7,7 @@ import SearchForm from '../SearchForm/SearchForm.js';
 import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
 import JobCard from '../JobCard/JobCard.tsx';
 
-function JobsView() {
+const JobsView: React.FC = () => {
   const {color} = useContext(ThemeContext);
   const {currentUser ,saveJob} = useContext(UserContext);
   const [jobList, setJobsList] = useState([]);
