@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from 'react';
 import './JobsView.css';
 import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
-import Header from '../Header/Header.tsx';
+import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm.js';
 import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
-import JobCard from '../JobCard/JobCard.tsx';
+import JobCard from '../JobCard/JobCard';
+
 
 const JobsView: React.FC = () => {
   const {color} = useContext(ThemeContext);
@@ -26,8 +27,8 @@ const JobsView: React.FC = () => {
     .catch(err => console.log(err))
   }, [currentCity])
 
-  const handleUpdateSalaries = (data) => {
-    const salariesList = data.data.map(job => {
+  const handleUpdateSalaries = (data: object, key: string) => {
+    const salariesList = data.data.map((job: object) => {
       return (
         <div className='salItem' key={job.id}>
           <h1 className='salTitle'>{job.attributes.title}</h1>
@@ -38,7 +39,7 @@ const JobsView: React.FC = () => {
     setCurrentSalaries(salariesList);
   }
 
-  const updataSearchedJobs = (searchCity, job) => {
+  const updataSearchedJobs = (searchCity: string, job: string) => {
     setCurrentCity(searchCity)
     getJobs(searchCity, job)
     .then(data => {

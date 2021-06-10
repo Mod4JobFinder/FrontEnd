@@ -18,7 +18,9 @@ export interface CardDetails {
   company: string,
   location: string,
   date: string,
-  handleYesJob: (event: React.MouseEvent<HTMLInputElement>) => void,
-  id: number,
-  updateList: (event: React.MouseEvent<HTMLInputElement>) => void
+  id: string,
+  handleYesJob: (event: React.MouseEvent<HTMLButtonElement>) => void,
+  updateList: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
+
+  // handleYesJob: (event: React.MouseEvent<HTMLInputElement>) => void,
