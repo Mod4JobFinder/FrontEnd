@@ -52,7 +52,7 @@ export interface DisplayAttributes {
 }
 
 export interface UpdateListJob {
-  id: string
+  id: string,
 }
 
 export interface LoginCheck {
@@ -68,8 +68,8 @@ export interface SavedCard {
   title: string,
   company: string,
   location: string,
-  id: number,
-  updateDetailJob: (id: number) => void
+  id: string,
+  updateDetailJob: (id: string) => void
 }
 
 export interface SearchTypes {
@@ -79,4 +79,13 @@ export interface SearchTypes {
   error: string,
   setLoading: (id: boolean) => void,
   loading: boolean
+}
+
+export interface SaveCards {
+  key: string,
+  id: string,
+  title: string,
+  company: string,
+  location: string,
+  updateDetailJob: (id: string) => void
 }

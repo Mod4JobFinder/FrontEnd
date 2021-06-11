@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect }from 'react';
+import { useContext, useState, useEffect } from 'react';
 import './UserView.css';
 import Header from '../Header/Header';
 import SaveCard from '../SaveCard/SaveCard';
@@ -6,6 +6,7 @@ import JobDetail from '../JobDetail/JobDetail';
 import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
 import {deleteJobFromUser} from '../../apiCalls.js';
+import {UpdateListJob, SaveCards} from '../../interface';
 
 function UserView() {
   const {color} = useContext(ThemeContext);
@@ -17,20 +18,20 @@ function UserView() {
     setSavJobList(userSavedJobs);
   }, [userSavedJobs]);
 
-  const updateDetailJob = (buttonId) => {
+  const updateDetailJob = (buttonId: string) => {
     const id = buttonId
-    const toDetail = savJobList.find(job => job.id === id);
+    const toDetail = savJobList.find((job: UpdateListJob) => job.id === id);
     setDetailJob(toDetail);
   }
 
-  const deleteJob = (idToDelete) => {
+  const deleteJob = (idToDelete: number) => {
     deleteJobUser(idToDelete)
     const jobToDelete = ({id: idToDelete})
     deleteJobFromUser(jobToDelete)
     .then(data => console.log(data))
   }
 
-  const buildSaveCards = savJobList.map(job => {
+  const buildSaveCards = savJobList.map((job: SaveCards) => {
     return (
       <SaveCard
         key={job.id}
@@ -45,7 +46,7 @@ function UserView() {
 
   return (
     <>
-      <Header />
+      <Header hidden={''}/>
       <div className='userView' data-cy='userView' style={color.pageBackGround}>
         <section className='saveCardsLayout' data-cy='saveCardsLayout'>
           {buildSaveCards}
