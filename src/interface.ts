@@ -1,4 +1,3 @@
-
 export interface Hidden {
   hidden: string;
 }
@@ -23,4 +22,18 @@ export interface CardDetails {
   updateList: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-  // handleYesJob: (event: React.MouseEvent<HTMLInputElement>) => void,
+export interface SalariesCall {
+  data: object[]
+}
+
+export interface JobTypeMap {
+  id: string,
+  attributes: JobAttributes
+
+}
+
+export interface JobAttributes {
+  title: string,
+  min_salary: string,
+  max_salary: string
+}

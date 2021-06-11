@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm.js';
 import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
 import JobCard from '../JobCard/JobCard';
-
+import {SalariesCall, JobTypeMap} from '../../interface';
 
 const JobsView: React.FC = () => {
   const {color} = useContext(ThemeContext);
@@ -14,7 +14,7 @@ const JobsView: React.FC = () => {
   const [jobList, setJobsList] = useState([]);
   const [currentSalaries, setCurrentSalaries] = useState([]);
   const [currentCity, setCurrentCity] = useState('');
-  const [error, setError] = useState(``);
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ const JobsView: React.FC = () => {
     .catch(err => console.log(err))
   }, [currentCity])
 
-  const handleUpdateSalaries = (data: object, key: string) => {
-    const salariesList = data.data.map((job: object) => {
+  const handleUpdateSalaries = (data: SalariesCall) => {
+    const salariesList:JSX.Element[] = data.data.map((job: JobTypeMap) => {
       return (
         <div className='salItem' key={job.id}>
           <h1 className='salTitle'>{job.attributes.title}</h1>
