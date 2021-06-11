@@ -19,7 +19,7 @@ export interface CardDetails {
   date: string,
   id: string,
   handleYesJob: (event: React.MouseEvent<HTMLButtonElement>) => void,
-  updateList: (id: string) => void,
+  updateList: (id: string) => void
 }
 
 export interface SalariesCall {
@@ -62,4 +62,12 @@ export interface LoginCheck {
 
 export interface CheckAttributes {
   attributes: object
+}
+
+export interface SavedCard {
+  title: string,
+  company: string,
+  location: string,
+  id: number,
+  updateDetailJob: (id: number) => void
 }
