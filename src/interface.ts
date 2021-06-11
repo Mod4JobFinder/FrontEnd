@@ -54,3 +54,12 @@ export interface DisplayAttributes {
 export interface UpdateListJob {
   id: string
 }
+
+export interface LoginCheck {
+  error: string,
+  data: CheckAttributes
+}
+
+export interface CheckAttributes {
+  attributes: object
+}

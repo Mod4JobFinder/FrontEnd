@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './Landing.css';
 import Header from '../Header/Header';
-import LoginForm from '../LoginForm/LoginForm.js';
+import LoginForm from '../LoginForm/LoginForm';
 import {ThemeContext} from '../../Context/ThemeContext.js';
 
 function Landing() {
