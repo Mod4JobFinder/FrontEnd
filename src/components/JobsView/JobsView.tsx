@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm.js';
 import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
 import JobCard from '../JobCard/JobCard';
-import {SalariesCall, JobTypeMap} from '../../interface';
+import {SalariesCall, JobTypeMap, JobDisplay, UpdateListJob} from '../../interface';
 
 const JobsView: React.FC = () => {
   const {color} = useContext(ThemeContext);
@@ -28,7 +28,7 @@ const JobsView: React.FC = () => {
   }, [currentCity])
 
   const handleUpdateSalaries = (data: SalariesCall) => {
-    const salariesList:JSX.Element[] = data.data.map((job: JobTypeMap) => {
+    const salariesList = data.data.map((job: JobTypeMap) => {
       return (
         <div className='salItem' key={job.id}>
           <h1 className='salTitle'>{job.attributes.title}</h1>
@@ -49,22 +49,26 @@ const JobsView: React.FC = () => {
     .catch(err => console.log(err))
   }
 
-  const handleYesJob = (e) => {
-    const id = e.target.id
-    const toSave = jobList.find(job => job.id === id);
-    updateList(e)
-    postJobToUser({email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description})
-    .then(data => saveJob(data.data.attributes))
-    .catch(err => console.log(err))
+  const handleYesJob = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const idToUse = (e.target as Element).id
+    const toSave = jobList.find((job: UpdateListJob) => job.id === idToUse);
+    if (!toSave) {
+      return
+    } else {
+      updateList(idToUse)
+      postJobToUser({email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description})
+      .then(data => saveJob(data.data.attributes))
+      .catch(err => console.log(err))
+    }
   }
 
-  const updateList = (e) => {
-    const id = e.target.id
-    const list = jobList.filter(job => job.id !== id)
+  const updateList = (id: string) => {
+    const idToFind = id
+    const list = jobList.filter((job: UpdateListJob) => job.id !== idToFind)
     setJobsList(list);
   }
 
-  const buildJobsDisplay = jobList.map(job => {
+  const buildJobsDisplay = jobList.map((job: JobDisplay) => {
     return (
       <JobCard
         updateList={updateList}

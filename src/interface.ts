@@ -19,21 +19,38 @@ export interface CardDetails {
   date: string,
   id: string,
   handleYesJob: (event: React.MouseEvent<HTMLButtonElement>) => void,
-  updateList: (event: React.MouseEvent<HTMLButtonElement>) => void
+  updateList: (id: string) => void,
 }
 
 export interface SalariesCall {
-  data: object[]
+  data: JobTypeMap[]
 }
 
 export interface JobTypeMap {
   id: string,
   attributes: JobAttributes
-
 }
 
 export interface JobAttributes {
   title: string,
   min_salary: string,
   max_salary: string
+}
+
+export interface JobDisplay {
+  attributes: DisplayAttributes,
+  date: string,
+  key: string,
+  id: string
+}
+
+export interface DisplayAttributes {
+  title: string,
+  company: string,
+  location: string,
+  date: string,
+}
+
+export interface UpdateListJob {
+  id: string
 }
