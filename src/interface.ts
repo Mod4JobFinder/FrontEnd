@@ -71,3 +71,12 @@ export interface SavedCard {
   id: number,
   updateDetailJob: (id: number) => void
 }
+
+export interface SearchTypes {
+  userCity: string,
+  updataSearchedJobs: (cityChecked: string, jobTitle: string) => void,
+  setError: (id: string) => void,
+  error: string,
+  setLoading: (id: boolean) => void,
+  loading: boolean
+}
