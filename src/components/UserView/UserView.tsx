@@ -5,7 +5,7 @@ import SaveCard from '../SaveCard/SaveCard';
 import JobDetail from '../JobDetail/JobDetail';
 import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
-import {deleteJobFromUser} from '../../apiCalls.js';
+import {deleteJobFromUser} from '../../apiCalls';
 import {UpdateListJob, SaveCards} from '../../interface';
 
 function UserView() {
@@ -24,7 +24,7 @@ function UserView() {
     setDetailJob(toDetail);
   }
 
-  const deleteJob = (idToDelete: number) => {
+  const deleteJob = (idToDelete: string) => {
     deleteJobUser(idToDelete)
     const jobToDelete = ({id: idToDelete})
     deleteJobFromUser(jobToDelete)

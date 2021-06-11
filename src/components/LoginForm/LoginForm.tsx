@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext.js';
 import { UserContext } from '../../Context/UserContext';
 import { Link, useHistory } from 'react-router-dom';
-import { postSession } from '../../apiCalls.js';
+import { postSession } from '../../apiCalls';
 import './LoginForm.css';
 import { LoginCheck } from '../../interface';
 

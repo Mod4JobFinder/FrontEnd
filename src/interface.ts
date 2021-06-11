@@ -8,8 +8,8 @@ export interface Details {
   location: string,
   description: string,
   url: string,
-  deleteJob: (id: number) => void,
-  id: number
+  deleteJob: (id: string) => void,
+  id: string
 }
 
 export interface CardDetails {
@@ -88,4 +88,16 @@ export interface SaveCards {
   company: string,
   location: string,
   updateDetailJob: (id: string) => void
+}
+
+export interface PostJobApiCall {
+  attributes: PostJobAttrib
+}
+
+export interface PostJobAttrib {
+  title: string,
+  company: string,
+  location: string,
+  description: string,
+  url: string,
 }

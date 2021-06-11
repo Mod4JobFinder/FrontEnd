@@ -4,7 +4,7 @@ import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
-import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
+import { getSalary, getJobs, postJobToUser } from '../../apiCalls';
 import JobCard from '../JobCard/JobCard';
 import {SalariesCall, JobTypeMap, JobDisplay, UpdateListJob} from '../../interface';
 
