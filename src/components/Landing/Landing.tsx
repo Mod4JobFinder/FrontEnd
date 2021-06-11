@@ -1,6 +1,6 @@
-import React, {useContext } from 'react';
+import { useContext } from 'react';
 import './Landing.css';
-import Header from '../Header/Header.tsx';
+import Header from '../Header/Header';
 import LoginForm from '../LoginForm/LoginForm.js';
 import {ThemeContext} from '../../Context/ThemeContext.js';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Landing from '../Landing/Landing.js';
+import Landing from '../Landing/Landing';
 import JobsView from '../JobsView/JobsView.tsx';
 import UserView from '../UserView/UserView.js';
 import NewUserScreen from '../NewUserScreen/NewUserScreen.js';
