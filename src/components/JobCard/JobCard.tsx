@@ -14,9 +14,8 @@ const JobCard: React.FC<CardDetails> = ({ jobTitle, company, location, date, han
       <p className='company' style={color.blueborder}>{company}</p>
       <p className='location'>{location}</p>
       <p className='date'>Posted on: {date}</p>
-      <button onClick={e => updateList(e)} id={id} className="no" style={color.pink}>Delete</button>
+      <button onClick={() => updateList(id)} id={id} className="no" style={color.pink}>Delete</button>
     </article>
   )
 }
-
 export default JobCard;
