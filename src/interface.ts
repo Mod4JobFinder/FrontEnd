@@ -91,13 +91,10 @@ export interface SaveCards {
 }
 
 export interface PostJobApiCall {
-  attributes: PostJobAttrib
-}
-
-export interface PostJobAttrib {
+  email: string,
   title: string,
   company: string,
   location: string,
   description: string,
-  url: string,
+  url: string
 }

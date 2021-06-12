@@ -6,7 +6,7 @@ import JobDetail from '../JobDetail/JobDetail';
 import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
 import {deleteJobFromUser} from '../../apiCalls';
-import {UpdateListJob, SaveCards} from '../../interface';
+import {UpdateListJob, SaveCards, Details} from '../../interface';
 
 function UserView() {
   const {color} = useContext(ThemeContext);
@@ -44,6 +44,20 @@ function UserView() {
     )
   })
 
+  const buildJobDetail = (detailJob: Details) => {
+    return (
+      <JobDetail
+        deleteJob={deleteJob}
+        id={detailJob.id}
+        title={detailJob.title}
+        company={detailJob.company}
+        location={detailJob.location}
+        description={detailJob.description}
+        url={detailJob.url}
+      />
+    )
+  }
+
   return (
     <>
       <Header hidden={''}/>
@@ -52,15 +66,7 @@ function UserView() {
           {buildSaveCards}
         </section>
         <section className='jobDetailLayout' data-cy='jobDetailLayout'>
-          <JobDetail
-            deleteJob={deleteJob}
-            id={detailJob.id}
-            title={detailJob.title}
-            company={detailJob.company}
-            location={detailJob.location}
-            description={detailJob.description}
-            url={detailJob.url}
-          />
+          {detailJob && buildJobDetail(detailJob)}
         </section>
       </div>
     </>
