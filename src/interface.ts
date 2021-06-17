@@ -37,22 +37,29 @@ export interface JobAttributes {
   max_salary: string
 }
 
-export interface JobDisplay {
-  attributes: DisplayAttributes,
-  date: string,
-  key: string,
-  id: string
+export interface UpdateListJob {
+  id: string,
+  type: string,
+  attributes: JobSearchAttributes
 }
 
-export interface DisplayAttributes {
+export interface JobSearchAttributes {
+  description: string,
   title: string,
   company: string,
+  url: string,
   location: string,
   date: string,
 }
 
-export interface UpdateListJob {
-  id: string,
+export interface JobDetailDisplay {
+  description: string,
+  title: string,
+  company: string,
+  url: string,
+  location: string,
+  date: string,
+  id: string
 }
 
 export interface LoginCheck {
