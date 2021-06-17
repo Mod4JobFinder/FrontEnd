@@ -6,12 +6,12 @@ import JobDetail from '../JobDetail/JobDetail';
 import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
 import {deleteJobFromUser} from '../../apiCalls';
-import {UpdateListJob, SaveCards, Details} from '../../interface';
+import {UpdateListJob, SaveCards, JobDetailDisplay} from '../../interface';
 
 function UserView() {
   const {color} = useContext(ThemeContext);
   const { userSavedJobs, deleteJobUser} = useContext(UserContext);
-  const [detailJob, setDetailJob] = useState({});
+  const [detailJob, setDetailJob] = useState<JobDetailDisplay>();
   const [savJobList, setSavJobList] = useState([]);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function UserView() {
     )
   })
 
-  const buildJobDetail = (detailJob: Details) => {
+  const buildJobDetail = (detailJob: JobDetailDisplay) => {
     return (
       <JobDetail
         deleteJob={deleteJob}

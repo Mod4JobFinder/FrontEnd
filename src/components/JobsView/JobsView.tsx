@@ -6,13 +6,13 @@ import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import { getSalary, getJobs, postJobToUser } from '../../apiCalls';
 import JobCard from '../JobCard/JobCard';
-import {SalariesCall, JobTypeMap, JobDisplay, UpdateListJob} from '../../interface';
+import {SalariesCall, JobTypeMap, UpdateListJob} from '../../interface';
 
 const JobsView: React.FC = () => {
   const {color} = useContext(ThemeContext);
   const {currentUser ,saveJob} = useContext(UserContext);
-  const [jobList, setJobsList] = useState([]);
-  const [currentSalaries, setCurrentSalaries] = useState([]);
+  const [jobList, setJobsList] = useState<UpdateListJob[]>([]);
+  const [currentSalaries, setCurrentSalaries] = useState<JSX.Element[]>([]);
   const [currentCity, setCurrentCity] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ const JobsView: React.FC = () => {
   }, [currentCity])
 
   const handleUpdateSalaries = (data: SalariesCall) => {
-    const salariesList = data.data.map((job: JobTypeMap) => {
+    const salariesList: JSX.Element[] = data.data.map((job: JobTypeMap) => {
       return (
         <div className='salItem' key={job.id}>
           <h1 className='salTitle'>{job.attributes.title}</h1>
@@ -69,7 +69,7 @@ const JobsView: React.FC = () => {
     setJobsList(list);
   }
 
-  const buildJobsDisplay = jobList.map((job: JobDisplay) => {
+  const buildJobsDisplay = jobList.map((job) => {
     return (
       <JobCard
         updateList={updateList}
