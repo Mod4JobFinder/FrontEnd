@@ -1,19 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './JobsView.css';
-import {ThemeContext} from '../../Context/ThemeContext';
+import {ThemeContext} from '../../Context/ThemeContext.js';
 import {UserContext} from '../../Context/UserContext';
-import Header from '../Header/Header.js';
-import SearchForm from '../SearchForm/SearchForm.js';
-import { getSalary, getJobs, postJobToUser } from '../../apiCalls.js';
-import JobCard from '../JobCard/JobCard.js';
+import Header from '../Header/Header';
+import SearchForm from '../SearchForm/SearchForm';
+import { getSalary, getJobs, postJobToUser } from '../../apiCalls';
+import JobCard from '../JobCard/JobCard';
+import {SalariesCall, JobTypeMap, JobDisplay, UpdateListJob} from '../../interface';
 
-function JobsView() {
+const JobsView: React.FC = () => {
   const {color} = useContext(ThemeContext);
   const {currentUser ,saveJob} = useContext(UserContext);
   const [jobList, setJobsList] = useState([]);
   const [currentSalaries, setCurrentSalaries] = useState([]);
   const [currentCity, setCurrentCity] = useState('');
-  const [error, setError] = useState(``);
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -26,8 +27,8 @@ function JobsView() {
     .catch(err => console.log(err))
   }, [currentCity])
 
-  const handleUpdateSalaries = (data) => {
-    const salariesList = data.data.map(job => {
+  const handleUpdateSalaries = (data: SalariesCall) => {
+    const salariesList = data.data.map((job: JobTypeMap) => {
       return (
         <div className='salItem' key={job.id}>
           <h1 className='salTitle'>{job.attributes.title}</h1>
@@ -38,7 +39,7 @@ function JobsView() {
     setCurrentSalaries(salariesList);
   }
 
-  const updataSearchedJobs = (searchCity, job) => {
+  const updataSearchedJobs = (searchCity: string, job: string) => {
     setCurrentCity(searchCity)
     getJobs(searchCity, job)
     .then(data => {
@@ -48,22 +49,27 @@ function JobsView() {
     .catch(err => console.log(err))
   }
 
-  const handleYesJob = (e) => {
-    const id = e.target.id
-    const toSave = jobList.find(job => job.id === id);
-    updateList(e)
-    postJobToUser({email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description})
-    .then(data => saveJob(data.data.attributes))
-    .catch(err => console.log(err))
+  const handleYesJob = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const idToUse = (e.target as Element).id
+    const toSave = jobList.find((job: UpdateListJob) => job.id === idToUse);
+    if (!toSave) {
+      return
+    } else {
+      updateList(idToUse)
+      const jobToPost = {email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description}
+      postJobToUser(jobToPost)
+      .then(data => saveJob(data.data.attributes))
+      .catch(err => console.log(err))
+    }
   }
 
-  const updateList = (e) => {
-    const id = e.target.id
-    const list = jobList.filter(job => job.id !== id)
+  const updateList = (id: string) => {
+    const idToFind = id
+    const list = jobList.filter((job: UpdateListJob) => job.id !== idToFind)
     setJobsList(list);
   }
 
-  const buildJobsDisplay = jobList.map(job => {
+  const buildJobsDisplay = jobList.map((job: JobDisplay) => {
     return (
       <JobCard
         updateList={updateList}

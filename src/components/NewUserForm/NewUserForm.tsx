@@ -1,11 +1,12 @@
-import React, { useState, useContext } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext';
+import { useState, useContext } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import { UserContext } from '../../Context/UserContext';
 import { Link, useHistory } from 'react-router-dom';
-import { postNewUser } from '../../apiCalls.js';
+import { postNewUser } from '../../apiCalls';
 import './NewUserForm.css';
+import { LoginCheck } from '../../interface';
 
-function NewUserForm() {
+const NewUserForm = () => {
   const {color} = useContext(ThemeContext);
   const {handleGoodLogin} = useContext(UserContext);
   const history = useHistory();
@@ -19,7 +20,7 @@ function NewUserForm() {
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmitNew = (e) => {
+  const handleSubmitNew = () => {
     const  user = {
       "email": email,
       "password": password,
@@ -43,7 +44,7 @@ function NewUserForm() {
     }
   }
 
-  const loginCheck = (user) => {
+  const loginCheck = (user: LoginCheck) => {
     if (user.error === 'invalid parameters') {
       setError('It seems a field was missed. Please check that all forms are filled out and try again.')
       clearUserForm();

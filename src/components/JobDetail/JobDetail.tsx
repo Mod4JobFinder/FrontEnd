@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import './JobDetail.css';
+import { Details } from '../../interface';
 
-function JobDetail( {title, company, location, description, url, deleteJob, id } ) {
+const JobDetail: React.FC<Details> = ({title, company, location, description, url, deleteJob, id }): JSX.Element => {
   const { color } = useContext(ThemeContext)
 
-  const descSeg = description => {
+  const descSeg = (description: string) => {
     if (description) {
       const newDesc = description.split('<br>').map((segment, i) => {
       return <React.Fragment key={i.toString()}>{`${segment}`} <br /></React.Fragment>
@@ -23,7 +24,7 @@ function JobDetail( {title, company, location, description, url, deleteJob, id }
         <p className='detDesc' data-cy='detDesc'>{descSeg(description)}</p>
         {!!description && <div className='appDel'>
           <a href={url} className='detUrl' style={color.green} target="_blank" rel='noreferrer' data-cy='detUrl'>Apply Here</a>
-          <button className='deleteJobButton' style={color.pink} data-cy='deleteJobButton' id={id} onClick={e => deleteJob(id)}>Delete Job</button>
+          <button className='deleteJobButton' style={color.pink} data-cy='deleteJobButton' onClick={() => deleteJob(id)}>Delete Job</button>
         </div>}
         <div className='errorMsg' data-cy="message">{!description && 'Select a job from the cards to get started!'}</div>
       </div>

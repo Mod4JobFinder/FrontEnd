@@ -1,10 +1,13 @@
+import {PostJobApiCall} from './interface';
+
+
 const salaryUrl = 'https://findjob-backend.herokuapp.com/api/v1/salaries?city='
 const usersUrl = 'https://findjob-backend.herokuapp.com/api/v1/users'
 const loginUrl = 'https://findjob-backend.herokuapp.com/api/v1/sessions'
 const jobsUrl = 'https://findjob-backend.herokuapp.com/api/v1/jobs?city='
 const saveUrl = 'https://findjob-backend.herokuapp.com/api/v1/saved_jobs'
 
-export const postNewUser = (newUser) => {
+export const postNewUser = (newUser: object) => {
   return fetch(`${usersUrl}`, {
     method: 'POST',
     headers: {
@@ -15,7 +18,7 @@ export const postNewUser = (newUser) => {
   .then(response => response.json())
 }
 
-export const postSession = (sessionInfo) => {
+export const postSession = (sessionInfo: object) => {
   return fetch(`${loginUrl}`, {
     method: 'POST',
     headers: {
@@ -26,17 +29,17 @@ export const postSession = (sessionInfo) => {
   .then(response => response.json())
 }
 
-export const getSalary = (city) => {
+export const getSalary = (city: string) => {
   return fetch(`${salaryUrl}${city}`)
   .then(response => response.json())
 }
 
-export const getJobs = (city, job) => {
+export const getJobs = (city: string, job: string) => {
   return fetch(`${jobsUrl}${city}&title=${job}`)
   .then(response => response.json())
 }
 
-export const postJobToUser = (userJob) => {
+export const postJobToUser = (userJob: PostJobApiCall) => {
   return fetch(`${saveUrl}`, {
     method: 'POST',
     headers: {
@@ -47,7 +50,7 @@ export const postJobToUser = (userJob) => {
   .then(response => response.json())
 }
 
-export const deleteJobFromUser = (deleteJob) => {
+export const deleteJobFromUser = (deleteJob: object) => {
   return fetch(`${saveUrl}`, {
     method: 'DELETE',
     headers: {

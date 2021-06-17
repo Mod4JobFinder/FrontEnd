@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import { UserContext } from '../../Context/UserContext';
 import { Link, useHistory } from 'react-router-dom';
-import { postSession } from '../../apiCalls.js';
+import { postSession } from '../../apiCalls';
 import './LoginForm.css';
+import { LoginCheck } from '../../interface';
 
 function LoginForm() {
   const {color} = useContext(ThemeContext);
@@ -34,7 +35,7 @@ function LoginForm() {
     }
   }
 
-  const loginCheck = (user) => {
+  const loginCheck = (user: LoginCheck) => {
     if (user.error === 'invalid parameters') {
       setLoading(false);
       setError('Invalid login information, please take a second look and try again.');
@@ -48,7 +49,7 @@ function LoginForm() {
     }
   }
 
-  const errorTimeout = (time) => {
+  const errorTimeout = (time: number) => {
     window.setTimeout(function() {
       setError('')
     }, time);

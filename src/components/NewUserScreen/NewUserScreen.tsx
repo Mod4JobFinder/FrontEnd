@@ -1,6 +1,5 @@
-import React from 'react';
-import NewUserForm from '../NewUserForm/NewUserForm.js';
-import Header from '../Header/Header.js';
+import NewUserForm from '../NewUserForm/NewUserForm';
+import Header from '../Header/Header';
 
 function NewUserScreen() {
   return (

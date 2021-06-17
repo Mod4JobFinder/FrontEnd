@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {ThemeContext} from '../../Context/ThemeContext';
+import {ThemeContext} from '../../Context/ThemeContext.js';
 import './Header.css';
+import {Hidden} from '../../interface'
 
-function Header( {hidden} ) {
-  const { color, handleModeChange } = useContext(ThemeContext)
+const Header: React.FC<Hidden> = ({hidden}): JSX.Element => {
+  const { color, handleModeChange } = useContext(ThemeContext);
 
   return (
     <section className='headerLayout' style={color.blue} data-cy='headerLayout'>

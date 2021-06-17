@@ -1,14 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../../Context/ThemeContext';
+import { ThemeContext } from '../../Context/ThemeContext.js';
 import cityData from '../../cityData.js'
 import './SearchForm.css';
+import {SearchTypes} from '../../interface';
 
-function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setError, error, setLoading, loading }) {
+const SearchForm: React.FC<SearchTypes> = ({ userCity, updataSearchedJobs, setError, error, setLoading, loading }): JSX.Element => {
   const { color } = useContext(ThemeContext);
   const [city, setCity] = useState('');
   const [jobTitle, setJobTitle] = useState('');
 
-  const handleJobButton = (job) => {
+  const handleJobButton = (job: string) => {
     if (job === jobTitle) {
       setJobTitle('');
     } else {
@@ -52,7 +53,7 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setErr
     }
   }
 
-  const errorTimeout = (time) => {
+  const errorTimeout = (time: number) => {
     window.setTimeout(function() {
       setError('')
     }, time);
@@ -62,12 +63,12 @@ function SearchForm({ userCity, updataSearchedJobs, handleUpdateSalaries, setErr
     <section>
       <p className='searchCommit' data-cy='searchCommit'>{`Search for ${jobTitle || 'your desired job'} in ${city || 'your city'}?`}</p>
       <article className='jobFilter' data-cy='jobFilter'>
-        <button className='filtBut dataAnalyst' style={color.orange} data-cy='dataAnalyst' onClick={e => handleJobButton('Data Analyst')}>Data Analyst</button>
-        <button className='filtBut dataScientist' style={color.orange} data-cy='dataScientist' onClick={e => handleJobButton('Data Scientist')}>Data Scientist</button>
-        <button className='filtBut mobileDev' style={color.orange} data-cy='mobileDev' onClick={e => handleJobButton('Mobile Developer')}>Mobile Developer</button>
-        <button className='filtBut qaEngineer' style={color.orange} data-cy='qaEngineer' onClick={e => handleJobButton('QA Engineer')}>QA Engineer</button>
-        <button className='filtBut sysAdmin' style={color.orange} data-cy='sysAdmin' onClick={e => handleJobButton('Systems Administrator')}>Systems Admin</button>
-        <button className='filtBut webDev' style={color.orange} data-cy='webDev' onClick={e => handleJobButton('Web Developer')}>Web Developer</button>
+        <button className='filtBut dataAnalyst' style={color.orange} data-cy='dataAnalyst' onClick={() => handleJobButton('Data Analyst')}>Data Analyst</button>
+        <button className='filtBut dataScientist' style={color.orange} data-cy='dataScientist' onClick={() => handleJobButton('Data Scientist')}>Data Scientist</button>
+        <button className='filtBut mobileDev' style={color.orange} data-cy='mobileDev' onClick={() => handleJobButton('Mobile Developer')}>Mobile Developer</button>
+        <button className='filtBut qaEngineer' style={color.orange} data-cy='qaEngineer' onClick={() => handleJobButton('QA Engineer')}>QA Engineer</button>
+        <button className='filtBut sysAdmin' style={color.orange} data-cy='sysAdmin' onClick={() => handleJobButton('Systems Administrator')}>Systems Admin</button>
+        <button className='filtBut webDev' style={color.orange} data-cy='webDev' onClick={() => handleJobButton('Web Developer')}>Web Developer</button>
       </article>
       <article className='searchBar'>
         <input
