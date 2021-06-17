@@ -18,7 +18,7 @@ export const postNewUser = (newUser: object) => {
   .then(response => response.json())
 }
 
-export const postSession = (sessionInfo: string) => {
+export const postSession = (sessionInfo: object) => {
   return fetch(`${loginUrl}`, {
     method: 'POST',
     headers: {

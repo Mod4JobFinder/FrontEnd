@@ -1,4 +1,3 @@
-import React from 'react';
 import NewUserForm from '../NewUserForm/NewUserForm';
 import Header from '../Header/Header';
 

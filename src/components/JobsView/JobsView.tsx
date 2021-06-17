@@ -56,7 +56,8 @@ const JobsView: React.FC = () => {
       return
     } else {
       updateList(idToUse)
-      postJobToUser({email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description})
+      const jobToPost = {email: currentUser.email, title: toSave.attributes.title, company: toSave.attributes.company, location: toSave.attributes.location, url: toSave.attributes.url, description: toSave.attributes.description}
+      postJobToUser(jobToPost)
       .then(data => saveJob(data.data.attributes))
       .catch(err => console.log(err))
     }
